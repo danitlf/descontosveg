@@ -42,7 +42,7 @@
                     {% for books in book %}
                     {% if books.status == "p" %}
 
-                    <h2>Livro: {{ books.name}} <a href="#" class="btn btn-primary" role="button">Comprar o book</a> </h2>
+                    <h2>Livro: {{ books.name}}  <a href="#" class="btn btn-primary" role="button">R${{books.value}}</a> </h2>
                     {% endif %}
                     {% endfor %}
                     <hr/> 
@@ -68,7 +68,7 @@
         <h3>{{sales.name}}</h3>
         <p>{{sales.description}}</p>
         <p>Valor: R$ {{sales.value}}</p>
-        <p><a href="#" class="btn btn-primary" role="button">Comprar</a> </p>
+        <p><a href="/moip/{{sales.value}}"class="btn btn-primary" role="button">Comprar</a> </p>
       </div>
     </div>
   </div>
