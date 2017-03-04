@@ -20,6 +20,8 @@ class Usual(models.Model):
     
     name = models.CharField(_('titulo'),max_length=100)
     description = models.TextField(_('descricao'),max_length=100,blank=True)
+    #value = models.floatField(_('valor'),max_length=100,blank=True)
+    #image = models.ImageField(_('Imagem:'),null=True, blank=True, upload_to= 'img')
     status = models.CharField(max_length=1, choices=STATUS_CHOICES)
 
     

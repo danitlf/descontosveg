@@ -4,14 +4,29 @@
 {% extends 'base.html' %}
 {% block content %}
 
+
+
+ 
+
+
     
     <header>
+
+
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                    
                     <div class="intro-text">
                         <span class="name">descontos no mundo vegetariano
+
+                           {% for books in book %}
+
+                             {{ books.name }}
+
+                            {% endfor %}
+
 
                             <span class="glyphicon glyphicon-grain" aria-hidden="true"></span>
 
