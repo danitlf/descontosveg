@@ -16,9 +16,13 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from descontosveg.book import views
+from descontosveg.moip import views as view_moip
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
+    url(r'^moip/$', view_moip.moipSend, name='moipSend'),
+    url(r'^contact/$', views.contact, name='contact'),
+
 ]
 
