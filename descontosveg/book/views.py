@@ -20,13 +20,6 @@ def home(request):
 
     return render(request, 'index.html', {'form': form_class,'book':book,'sale':sale, 'STATIC_URL': settings.STATIC_URL})
 
-def contact(request):
-    form_class = ContactForm
-    
-    return render(request, 'contact.html', {
-        'form': form_class,
-    })
-
 
 def send_email(request):
     subject = request.POST.get('contact_name')
