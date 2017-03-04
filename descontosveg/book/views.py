@@ -14,10 +14,11 @@ def home(request):
     
     book = Book.objects.all()
     sale = Sale.objects.all()
+    form_class = ContactForm
 
 
 
-    return render(request, 'index.html', {'book':book,'sale':sale, 'STATIC_URL': settings.STATIC_URL})
+    return render(request, 'index.html', {'form': form_class,'book':book,'sale':sale, 'STATIC_URL': settings.STATIC_URL})
 
 def contact(request):
     form_class = ContactForm
