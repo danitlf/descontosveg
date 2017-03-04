@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'descontosveg.book',
+    'descontosveg.moip',
 ]
 
 MIDDLEWARE = [
