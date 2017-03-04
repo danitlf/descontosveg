@@ -11,9 +11,10 @@ from descontosveg.book.models import Book, Sale
 class BookAdmin(admin.ModelAdmin):
 
     
-    list_display = ('name','description','status',)
-    list_editable = ()
-    search_fields = ()
+    list_display = ('name','description','status','value',)
+    list_editable = ('value','status', )
+    search_fields = ('name', )
+    
     fields = ()
     
     
