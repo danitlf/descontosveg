@@ -28,14 +28,10 @@ def contact(request):
 
 
 def send_email(request):
-    print "cheguei"
     subject = request.POST.get('contact_name')
     message = request.POST.get('content')
     from_email = request.POST.get('contact_email')
-
-    print subject
-    print message
-    print from_email
+    message = message + "\n from: "+ str(from_email)
     if subject and message and from_email:
         try:
             send_mail(subject, message, from_email, ['descontosveg@gmail.com'])
