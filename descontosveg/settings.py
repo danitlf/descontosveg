@@ -75,6 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -131,5 +132,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = PROJECT_DIR.child('static')
 
+
 MEDIA_ROOT = PROJECT_DIR.child('media')
+
 MEDIA_URL = '/media/'
