@@ -44,7 +44,7 @@
                     {% for books in book %}
                     {% if books.status == "p" %}
 
-                    <h2>Livro: {{ books.name}} </h2>
+                    <h2>Livro: {{ books.name}} <a href="#" class="btn btn-primary" role="button">Comprar o book</a> </h2>
                     {% endif %}
                     {% endfor %}
                     <hr/> 
@@ -56,13 +56,14 @@
 
                     {% if sales.status == "p" %} 
 
-                    
+
                 
 
                 <div class="row">
   <div class="col-sm-4 portfolio-item">
     <div class="thumbnail">
-      <img src="{{STATIC_URL}}img/vegetariano.jpg" alt="...">
+        <img src="descontosveg/descontosveg/media/{{sales.image}}" > 
+      
       <div class="caption">
         <h3>{{sales.name}}</h3>
         <p>{{sales.description}}</p>
