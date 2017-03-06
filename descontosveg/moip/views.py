@@ -12,4 +12,4 @@ def moipSend(request, valor):
 
 
 def formMoip(request):
-	return rende(request, 'teste_form.html')
+	return render(request, 'teste_form.html')
