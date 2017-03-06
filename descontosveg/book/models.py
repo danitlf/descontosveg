@@ -22,7 +22,7 @@ class Usual(models.Model):
     
     name = models.CharField(_('titulo'),max_length=100)
     description = models.TextField(_('descricao'),max_length=100,blank=True)
-    value = models.FloatField(null=True, blank=True, default=None)
+    value = models.DecimalField(null=True, blank=True, default=None,decimal_places=2,max_digits=5)
     image = models.ImageField(_('Imagem:'),null=True, blank=True, upload_to= 'uploads')
     status = models.CharField(max_length=1, choices=STATUS_CHOICES)
 
@@ -65,6 +65,19 @@ class Sale(Usual):
 
     def __unicode__(self):
         return (self.name)
+
+
+class Partner(models.Model):
+
+    name = models.CharField(_('Nome'),max_length=100)     
+    cnpj = models.IntegerField(_('CNPJ'),max_length=20)  
+
+
+class User(models.Model):
+
+    partner = models.ForeignKey('Partner',verbose_name=_('CNPJ do Parceiro'))
+
+
 
 	
 
