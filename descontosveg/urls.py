@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
     url(r'^moip/(\d+\.\d{2})$', view_moip.moipSend, name='moipSend'),
+    url(r'^formmoip/$', view_moip.formMoip, name='formMoip'),
     url(r'^send_email/$', views.send_email, name='send_email'),
 
 

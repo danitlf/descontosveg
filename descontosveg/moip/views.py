@@ -9,3 +9,7 @@ def moipSend(request, valor):
     moip.envia()
     resposta = moip.get_resposta()
     return HttpResponseRedirect("https://desenvolvedor.moip.com.br/sandbox/Instrucao.do?token="+str(resposta['token']))
+
+
+def formMoip(request):
+	return rende(request, 'teste_form.html')

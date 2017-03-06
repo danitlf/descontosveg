@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 
-from descontosveg.book.models import Book, Sale
+from descontosveg.book.models import Book, Sale, Partner
 
 # Register your models here.
 
@@ -37,5 +37,19 @@ class SaleAdmin(admin.ModelAdmin):
     
     
 admin.site.register(Sale, SaleAdmin)
+
+
+class PartnerAdmin(admin.ModelAdmin):
+
+    
+    list_display = ('name','cnpj',)
+    list_editable = ()
+    list_editable = ()
+    search_fields = ()
+    fields = ()
+    
+    
+    
+admin.site.register(Partner, PartnerAdmin)
 
 

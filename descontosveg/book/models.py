@@ -66,5 +66,18 @@ class Sale(Usual):
     def __unicode__(self):
         return (self.name)
 
+
+class Partner(models.Model):
+
+    name = models.CharField(_('Nome'),max_length=100)     
+    cnpj = models.IntegerField(_('CNPJ'),max_length=20)  
+
+
+class User(models.Model):
+
+    partner = models.ForeignKey('Partner',verbose_name=_('CNPJ do Parceiro'))
+
+
+
 	
 
