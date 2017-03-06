@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth.models import User
 
 
 
@@ -70,10 +71,10 @@ class Sale(Usual):
 class Partner(models.Model):
 
     name = models.CharField(_('Nome'),max_length=100)     
-    cnpj = models.IntegerField(_('CNPJ'),max_length=20)  
+    cnpj = models.IntegerField(_('CNPJ'))  
 
 
-class User(models.Model):
+class Person(User):
 
     partner = models.ForeignKey('Partner',verbose_name=_('CNPJ do Parceiro'))
 
