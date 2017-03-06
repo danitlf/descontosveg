@@ -21,7 +21,7 @@
                     <div class="intro-text">
                         <span class="name">descontos no mundo vegetariano
 
-                           
+                           {{ user.get_username }}
 
                             <span class="glyphicon glyphicon-grain" aria-hidden="true"></span>
 
@@ -68,7 +68,7 @@
         <h3>{{sales.name}}</h3>
         <p>{{sales.description}}</p>
         <p>Valor: R$ {{sales.value}}</p>
-        <p><a href="/moip/{{sales.value}}"class="btn btn-primary" role="button">Comprar</a> </p>
+        <p><a href="/moip/{{sales.value}}" class="btn btn-primary" role="button">Comprar</a> </p>
       </div>
     </div>
   </div>
