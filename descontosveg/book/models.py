@@ -7,7 +7,6 @@ from django.contrib.auth.models import User
 
 
 
-
 STATUS_CHOICES = (
     ('d', 'Despublicado'),
     ('p', 'Publicado'),    
@@ -74,8 +73,9 @@ class Partner(models.Model):
     cnpj = models.IntegerField(_('CNPJ'))  
 
 
-class Person(User):
+class Person(models.Model):
 
+    user = models.OneToOneField(User, on_delete=models.CASCADE) 
     partner = models.ForeignKey('Partner',verbose_name=_('CNPJ do Parceiro'))
 
 

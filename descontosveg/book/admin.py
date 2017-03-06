@@ -3,6 +3,8 @@ from django.contrib import admin
 
 from descontosveg.book.models import Book, Sale, Partner
 
+
+
 # Register your models here.
 
 
@@ -51,5 +53,7 @@ class PartnerAdmin(admin.ModelAdmin):
     
     
 admin.site.register(Partner, PartnerAdmin)
+
+
 
 
