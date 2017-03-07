@@ -80,7 +80,7 @@ class Partner(models.Model):
 
 class Person(User):
 
-    cpf = models.IntegerField(_('CPF'))
+    cpf = models.CharField(_('CPF'),max_length=11)
     partner = models.ForeignKey('Partner',verbose_name=_('Nome do Parceiro'))
     
 
