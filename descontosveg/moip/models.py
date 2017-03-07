@@ -12,6 +12,11 @@ class Purchase(models.Model):
     state = models.CharField(_('status'),max_length=200)
     token = models.CharField(_('token'),max_length=300)
 
+class User_Sales(models.Model):
+	sale = models.ForeignKey('book.Sale')
+	state = models.CharField(_('status'),max_length=200)
+	user = models.ForeignKey('book.Person')
+	purchase = models.ForeignKey('Purchase')
     
 
 		
