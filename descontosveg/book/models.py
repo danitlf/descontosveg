@@ -54,6 +54,7 @@ class Book(Usual):
 
 class Sale(Usual):
 
+    partner = models.ForeignKey('Partner')
     books = models.ForeignKey('Book',verbose_name=_('Livro'))
 
 
