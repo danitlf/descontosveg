@@ -70,13 +70,21 @@ class Sale(Usual):
 class Partner(models.Model):
 
     name = models.CharField(_('Nome'),max_length=100)     
-    cnpj = models.IntegerField(_('CNPJ'))  
+    cnpj = models.IntegerField(_('CNPJ')) 
 
 
-class Person(models.Model):
+    def __unicode__(self):
+        return (self.name) 
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE) 
-    partner = models.ForeignKey('Partner',verbose_name=_('CNPJ do Parceiro'))
+
+class Person(User):
+
+    cpf = models.IntegerField(_('CPF'))
+    partner = models.ForeignKey('Partner',verbose_name=_('Nome do Parceiro'))
+    
+
+    def __unicode__(self):
+        return (self.cpf)
 
 
 

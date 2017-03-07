@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 
-from descontosveg.book.models import Book, Sale, Partner
+from descontosveg.book.models import Book, Sale, Partner, Person
 
 
 
@@ -53,6 +53,20 @@ class PartnerAdmin(admin.ModelAdmin):
     
     
 admin.site.register(Partner, PartnerAdmin)
+
+
+class PersonAdmin(admin.ModelAdmin):
+
+    
+    list_display =  ('partner','cpf',)
+    list_editable = ()
+    list_editable = ()
+    search_fields = ()
+    fields = ()
+    
+    
+    
+admin.site.register(Person, PersonAdmin)
 
 
 
