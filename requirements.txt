@@ -5,7 +5,7 @@ Django==1.10.6
 django-moip==0.1.1
 furl==0.5.7
 gunicorn==19.6.0
-lxml==3.7.3
+lxml
 orderedmultidict==0.7.11
 packaging==16.8
 psycopg2==2.6.2
