@@ -19,7 +19,7 @@ def moipSend(request, id_book):
     razao = book_selecionado.name
 
     #creating obj of Purchase
-    purchase = Purchase(name=book_selecionado.name, state="0", value=book_selecionado.value)
+    purchase = Purchase(state="0", value=book_selecionado.value, book=book_selecionado)
     purchase.save()
 
 
@@ -65,3 +65,5 @@ def atualiza_compra(dados):
     compra.date = datetime.strptime(dados["status_data"], "%Y/%m/%d-%H:%M:%S")
     compra.id_moip = dados["cod_moip"]
     compra.save()
+
+    if dados["status_pagamento"] == 
