@@ -18,7 +18,7 @@ class Purchase(models.Model):
     date = models.DateField(null=True, blank=True)
 
     def __unicode__(self):
-        return (self.pk)
+        return (str(self.pk))
     
 class User_Sales(models.Model):
 	sale = models.ForeignKey('book.Sale')
