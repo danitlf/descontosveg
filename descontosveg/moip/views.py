@@ -1,3 +1,4 @@
+# coding: utf-8
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
@@ -57,10 +58,10 @@ def moipResponse(request):
 
 #com o retorno do moip nos atualizamos o registro
 def atualiza_compra(dados):
-    compra = Purchase.objects.get(id=dados["id_transacao"][0])
-    compra.forma_pagamento = dados["forma_pagamento"][0]
-    compra.tipo_pagamento = dados["tipo_pagamento"][0]
-    compra.state = dados["status_pagamento"][0]
+    compra = Purchase.objects.get(id=dados["id_transacao"])
+    compra.forma_pagamento = dados["forma_pagamento"]
+    compra.tipo_pagamento = dados["tipo_pagamento"]
+    compra.state = dados["status_pagamento"]
     compra.date = datetime.strptime(dados["status_data"], "%Y/%m/%d-%H:%M:%S")
-    compra.id_moip = dados["cod_moip"][0]
+    compra.id_moip = dados["cod_moip"]
     compra.save()
