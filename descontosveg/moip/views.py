@@ -7,7 +7,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 import json
-from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.csrf import csrf_exempt
 
 
 def moipSend(request, id_book):
@@ -25,7 +25,7 @@ def formMoip(request):
 	return render(request, 'teste_form.html')
 
 @api_view(['POST'])
-@csrf_protect
+@csrf_exempt
 def moipResponse(request):
     if request.method == "POST":
         print request.data
