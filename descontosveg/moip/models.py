@@ -16,6 +16,9 @@ class Purchase(models.Model):
     token = models.CharField(_('token'),max_length=300)
     id_moip =  models.CharField(_('id_moip'),max_length=200, null=True, blank=True)
     date = models.DateField(null=True, blank=True)
+
+    def __unicode__(self):
+        return (self.pk)
     
 class User_Sales(models.Model):
 	sale = models.ForeignKey('book.Sale')
