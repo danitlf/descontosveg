@@ -43,7 +43,7 @@ def moipResponse(request):
 
         atualiza_compra(data)
 
-        
+
         # teste de recebimento de dados do MoIP
         # arquivo = open('retorno_moip.txt', 'w')
         # arquivo.write(str(data))
@@ -61,6 +61,6 @@ def atualiza_compra(dados):
     compra.forma_pagamento = dados["forma_pagamento"][0]
     compra.tipo_pagamento = dados["tipo_pagamento"][0]
     compra.state = dados["status_pagamento"][0]
-    compra.date = datetime.strptime(dados["status_data"][0], "%Y/%m/%d-%H:%M:%S")
-    compra.id_moip = dados["status_data"][0]
+    compra.date = datetime.strptime(dados["status_data"], "%Y/%m/%d-%H:%M:%S")
+    compra.id_moip = dados["cod_moip"][0]
     compra.save()
