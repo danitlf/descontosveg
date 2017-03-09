@@ -31,7 +31,7 @@ def moipResponse(request):
         print request.data
         data = request.data
         arquivo = open('retorno_moip.txt', 'w')
-        arquivo.write(str(data))
+        arquivo.write(data)
         arquivo.close()
         return HttpResponse()
     else:
