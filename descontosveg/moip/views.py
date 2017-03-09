@@ -21,3 +21,9 @@ def formMoip(request):
 def moipResponse(request):
     if request.method == "POST":
         print request.POST
+        arquivo = open('retorno_moip.txt', 'w')
+        arquivo.write(request.POST)
+        arquivo.close()
+        return HttpResponse()
+    else:
+        return HttpResponse()
