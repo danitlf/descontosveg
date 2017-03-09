@@ -66,4 +66,5 @@ def atualiza_compra(dados):
     compra.id_moip = dados["cod_moip"]
     compra.save()
 
-    if dados["status_pagamento"] == 
+    # if dados["status_pagamento"] == "4":
+
