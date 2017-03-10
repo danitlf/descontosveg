@@ -19,7 +19,7 @@ def moipSend(request, id_book):
     razao = book_selecionado.name
 
     #creating obj of Purchase
-    purchase = Purchase(state="0", value=book_selecionado.value, book=book_selecionado)
+    purchase = Purchase(state="0", value=book_selecionado.value, book=book_selecionado, user=request.user)
     purchase.save()
 
 
