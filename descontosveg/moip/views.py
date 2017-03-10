@@ -64,7 +64,22 @@ def atualiza_compra(dados):
     compra.state = dados["status_pagamento"]
     compra.date = datetime.strptime(dados["status_data"], "%Y/%m/%d-%H:%M:%S")
     compra.id_moip = dados["cod_moip"]
-    compra.save()
+    obj_da_compra = compra.save()
 
-    # if dados["status_pagamento"] == "4":
+    if dados["status_pagamento"] == "4":
+
+        #insere todas as ofertas que existiam no book comprado
+        insere_ofertas_do_usuario(obj_da_compra)
+
+
+
+def insere_ofertas_do_usuario(compra):
+    sales_do_book = Sale.objects.filter(id=compra.book.pk)
+    for sale in sales_do_book:
+        user_sale = User_Sales(sale=sale, user=compra.user, state="1", purchase=compra)
+
+
+
+
+
 
