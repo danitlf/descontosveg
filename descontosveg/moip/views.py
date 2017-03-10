@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from moip import MoIP
-from descontosveg.book.models import Book
+from descontosveg.book.models import Book, Sale
 from descontosveg.moip.models import Purchase, User_Sales
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -39,7 +39,6 @@ def formMoip(request):
 @csrf_exempt
 def moipResponse(request):
     if request.method == "POST":
-        print request.data
         data = request.data
 
         atualiza_compra(data)
@@ -64,8 +63,8 @@ def atualiza_compra(dados):
     compra.state = dados["status_pagamento"]
     compra.date = datetime.strptime(dados["status_data"], "%Y/%m/%d-%H:%M:%S")
     compra.id_moip = dados["cod_moip"]
-    obj_da_compra = compra.save()
-
+    compra.save()
+    obj_da_compra = Purchase.objects.get(id=dados["id_transacao"])
     if dados["status_pagamento"] == "4":
 
         #insere todas as ofertas que existiam no book comprado
@@ -74,7 +73,7 @@ def atualiza_compra(dados):
 
 
 def insere_ofertas_do_usuario(compra):
-    sales_do_book = Sale.objects.filter(id=compra.book.pk)
+    sales_do_book = Sale.objects.filter(books=compra.book)
     for sale in sales_do_book:
         user_sale = User_Sales(sale=sale, user=compra.user, state="1", purchase=compra)
         user_sale.save()
