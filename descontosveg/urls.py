@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls.static import static
-
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from django.conf.urls import url
 from django.contrib import admin
 from descontosveg.book import views
 from descontosveg.moip import views as view_moip
+from django.contrib.auth import views as auth_views
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -29,9 +31,16 @@ urlpatterns = [
     url(r'^moip/response/$', view_moip.moipResponse, name='moipSend'),
     url(r'^formmoip/$', view_moip.formMoip, name='formMoip'),
     url(r'^send_email/$', views.send_email, name='send_email'),
+    url(r'^cadastro/$', views.cadastro, name='cadastro'),
+    url(r'^login/$', auth_views.login, {'template_name': 'login.html'}),
+
+    url(r'^logout/$', auth_views.logout, name='logout'),
+
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
 admin.site.site_header = settings.ADMIN_SITE_HEADER

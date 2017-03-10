@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,7 +58,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">descontosveg</a>
+                <a class="navbar-brand" href="#page-top"><img alt="Brand" src="{{STATIC_URL}}/img/Logoveg.png"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -75,6 +77,25 @@
                     <li class="page-scroll">
                         <a href="#contact">Contato</a>
                     </li>
+                     {% if user.is_anonymous %}
+                    <li class="page-scroll">
+                        <a href="{% url 'cadastro' %}">Minha conta</a>
+                    </li>
+                    {% else %}
+                    <li class="page-scroll">
+                        <a href="#" data-toggle="dropdown">Olá, {{ user.first_name }}</a>
+
+                        <ul class="dropdown-menu">
+                        <li><a href="#">Meus pedidos</a></li>
+                        <li><a href="/logout">Sair</a></li>
+                        
+                    
+                        </ul>
+                    
+                    </li>
+                    {% endif %}
+                    
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -82,18 +103,22 @@
         <!-- /.container-fluid -->
     </nav>
 
+
+
  <!-- Fim do header --> 
   
 
   
 <!-- conteúdo das páginas que herdam a base --> 
+<div class="">
 
+    
 
          {% block content %}
          {% endblock content %}
 
 
-
+<div> 
 
 
 <!-- início do footer --> 
@@ -140,6 +165,9 @@
             </div>
         </div>
     </footer>
+
+
+  
 
     <!-- Fim do footer --> 
 

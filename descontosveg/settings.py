@@ -117,12 +117,22 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
+# ESQUEMA DE LOGIN
+AUTH_PROFILE_MODULE = 'admin'
+
+LOGIN_URL = 'django.contrib.auth.views.login'
+
+LOGIN_REDIRECT_URL  =  '/'
+
+LOGOUT_REDIRECT_URL  =  '/'
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-BR'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
@@ -131,15 +141,27 @@ USE_L10N = True
 USE_TZ = True
 
 
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_DIR, "book/static"),
+    )
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = PROJECT_DIR.child('static')
+
+
+STATIC_ROOT = PROJECT_DIR.child('staticfiles',)
 
 
 MEDIA_ROOT = PROJECT_DIR.child('media')
 
 MEDIA_URL = '/media/'
+
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    )

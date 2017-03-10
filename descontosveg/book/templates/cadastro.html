@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<p></p>
+<br> 
+
+<div class="container"> 
+	<br><br><br>
+
+<div class="row-fluid">
+   <div class="">
+
+  	<h2>Crie seu cadastro</h2>
+                       
+
+
+
+
+<div class="row">
+
+	
+                <div class="col-lg-8 col-lg-offset-2">
+                    <form method="post" action="">
+    {% csrf_token %}
+    {{ formUser }}
+    <br>
+    <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
+</form>
+                </div>
+
+<h4>  Já possui cadastro? Faça seu <a href="/login"> login </a>  </h4>
+
+
+            </div>
+
+
+
+
+        </div> 
+
+ 
+
+
+  
+
+
+  </div>
+ 
+
+
+
+</div>
+
+<p></p>
+
+
+
+
+
+{% endblock content %}

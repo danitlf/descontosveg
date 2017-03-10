@@ -1,6 +1,8 @@
 from django.contrib import admin
 
 
+
+
 from descontosveg.book.models import Book, Sale, Partner, Person
 
 
@@ -67,6 +69,8 @@ class PersonAdmin(admin.ModelAdmin):
     
     
 admin.site.register(Person, PersonAdmin)
+
+
 
 
 
