@@ -86,7 +86,7 @@
                         <a href="#" data-toggle="dropdown">Olá, {{ user.first_name }}</a>
 
                         <ul class="dropdown-menu">
-                        <li><a href="#">Meus pedidos</a></li>
+                        <li><a href="{% url 'pedidos' %}">Meus pedidos</a></li>
                         <li><a href="/logout">Sair</a></li>
                         
                     
@@ -112,7 +112,7 @@
 <!-- conteúdo das páginas que herdam a base --> 
 <div class="">
 
-    
+
 
          {% block content %}
          {% endblock content %}

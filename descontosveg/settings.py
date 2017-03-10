@@ -90,6 +90,18 @@ TEMPLATES = [
 WSGI_APPLICATION = 'descontosveg.wsgi.application'
 
 
+
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.contrib.auth.context_processors.auth',
+    'django.contrib.messages.context_processors.messages',
+)
+
+
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
@@ -147,8 +159,8 @@ USE_TZ = True
 
 
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_DIR, "book/static"),
-    )
+    os.path.join(os.path.dirname(__file__), 'static'),
+)
 
 
 # Static files (CSS, JavaScript, Images)

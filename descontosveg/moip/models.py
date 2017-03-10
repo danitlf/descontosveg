@@ -7,7 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class Purchase(models.Model):
     
-    user = models.ForeignKey('book.Person', null=True, blank=True)
+    user = models.CharField(_('CPF'), null=True, blank=True,max_length=11)
     book = models.ForeignKey('book.Book',  null=True, blank=True)
     tipo_pagamento = models.CharField(_('tipo_pagamento'),max_length=100, null=True, blank=True)
     forma_pagamento = models.CharField(_('forma_pagamento'),max_length=100, null=True, blank=True)

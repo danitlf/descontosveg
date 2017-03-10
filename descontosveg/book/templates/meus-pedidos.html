@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                   
+               
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio">
+        <div class="container">
+
+            <div class="row">
+
+                 {% for sales in sales %}
+                    {% if  user == sales.user  %}
+
+                    {% if sales > 0 %}
+
+      
+                
+
+                <div class="row">
+  <div class="col-sm-4 portfolio-item">
+    <div class="thumbnail">
+
+       
+        <img src="{{ MEDIA_URL }}{{sales.image}}" > 
+      
+      <div class="caption">
+        <h3>{{sales.name}}</h3>
+        <p>{{sales.description}}</p>
+        <p>Valor: R$ {{sales.value}}</p>
+        <p><a href="moip/{{sales.value}}" class="btn btn-primary" role="button">Comprar</a> </p>
+      </div>
+    </div>
+  </div>
+</div>
+                {% else %}
+
+<h1> Não existem pedidos ativos em seu nome </h1>
+
+				{% endif %} 
+
+                {% endif %}
+                {% endfor %}
+                
+            </div>
+        </div>
+    </section>
+
+</div> 
+</div> 
+
+
+
+
+{% endblock content %}
