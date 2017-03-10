@@ -5,13 +5,27 @@ from django.db import models
 
 from django.utils.translation import ugettext_lazy as _
 
+
+
+STATUS_CHOICES = (
+    ('1', 'Autorizado'),
+    ('2', 'Iniciado'),
+    ('3', 'Boleto Impresso'),
+    ('4', 'Concluido'),
+    ('5', 'Cancelado'),
+    ('6', 'Em analise'),
+    ('7', 'Estornado'),
+    ('9', 'Reembolsado')
+
+)
+
 class Purchase(models.Model):
     
     user = models.CharField(_('CPF'), null=True, blank=True,max_length=11)
     book = models.ForeignKey('book.Book',  null=True, blank=True)
     tipo_pagamento = models.CharField(_('tipo_pagamento'),max_length=100, null=True, blank=True)
     forma_pagamento = models.CharField(_('forma_pagamento'),max_length=100, null=True, blank=True)
-    state = models.CharField(_('status'),max_length=200)
+    state = models.CharField(_('status'),max_length=200,choices=STATUS_CHOICES)
     value = models.CharField(_('value'),max_length=200, null=True, blank=True)
     token = models.CharField(_('token'),max_length=300)
     id_moip =  models.CharField(_('id_moip'),max_length=200, null=True, blank=True)
