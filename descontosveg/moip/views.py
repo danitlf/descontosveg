@@ -77,6 +77,7 @@ def insere_ofertas_do_usuario(compra):
     sales_do_book = Sale.objects.filter(id=compra.book.pk)
     for sale in sales_do_book:
         user_sale = User_Sales(sale=sale, user=compra.user, state="1", purchase=compra)
+        user_sale.save()
 
 
 
