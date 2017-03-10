@@ -19,6 +19,14 @@ STATUS_CHOICES = (
 
 )
 
+
+STATUS_CHOICES2 = (
+    ('0', 'Utilizado'),
+    ('1', 'Disponivel')
+    
+
+)
+
 class Purchase(models.Model):
     
     user = models.CharField(_('CPF'), null=True, blank=True,max_length=11)
@@ -36,6 +44,6 @@ class Purchase(models.Model):
     
 class User_Sales(models.Model):
 	sale = models.ForeignKey('book.Sale')
-	state = models.CharField(_('status'),max_length=200)
-	user = models.ForeignKey('book.Person')
+	state = models.CharField(_('status'),max_length=1, choices=STATUS_CHOICES2)
+	user = models.CharField(_('CPF'), null=True, blank=True,max_length=11)
 	purchase = models.ForeignKey('Purchase')
