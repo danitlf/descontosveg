@@ -81,7 +81,7 @@ def insere_ofertas_do_usuario(compra):
         id_user_sale = str(sale.id) + str(person.id) + str(compra.id_moip)
         
         #salva na tabela as ofertas do usuario
-        user_sale = User_Sales(sale=sale, user=compra.user, state="1", purchase=compra, id_user_sale=)
+        user_sale = User_Sales(sale=sale, user=compra.user, state="1", purchase=compra, id_user_sale=id_user_sale)
         user_sale.save()
 
 
