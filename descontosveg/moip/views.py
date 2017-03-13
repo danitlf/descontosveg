@@ -77,8 +77,7 @@ def insere_ofertas_do_usuario(compra):
     for sale in sales_do_book:
 
         #gera o id da oferta daquele usuario
-        person = Person.objects.get(cpf=compra.user)
-        id_user_sale = str(sale.id) + str(person.id) + str(compra.id_moip)
+        id_user_sale = str(sale.id) + str(compra.id_moip)
         
         #salva na tabela as ofertas do usuario
         user_sale = User_Sales(sale=sale, user=compra.user, state="1", purchase=compra, id_user_sale=id_user_sale)
