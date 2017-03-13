@@ -19,6 +19,7 @@ class BookAdmin(admin.ModelAdmin):
     list_editable = ('value','status', )
     search_fields = ('name', )
     
+    
     fields = ()
     
     
