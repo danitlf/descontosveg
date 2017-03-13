@@ -43,7 +43,9 @@ class Purchase(models.Model):
         return (str(self.pk))
     
 class User_Sales(models.Model):
-	sale = models.ForeignKey('book.Sale')
-	state = models.CharField(_('status'),max_length=1, choices=STATUS_CHOICES2)
-	user = models.CharField(_('CPF'), null=True, blank=True,max_length=11)
-	purchase = models.ForeignKey('Purchase')
+    sale = models.ForeignKey('book.Sale')
+    state = models.CharField(_('status'),max_length=1, choices=STATUS_CHOICES2)
+    user = models.CharField(_('CPF'), null=True, blank=True,max_length=11)
+    purchase = models.ForeignKey('Purchase')
+    id_user_sale = models.CharField(_('ID_OFERTA_USUARIO'), null=True, blank=True, max_length=500)
+

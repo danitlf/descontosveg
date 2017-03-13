@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from moip import MoIP
-from descontosveg.book.models import Book, Sale
+from descontosveg.book.models import Book, Sale, Person
 from descontosveg.moip.models import Purchase, User_Sales
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -75,7 +75,13 @@ def atualiza_compra(dados):
 def insere_ofertas_do_usuario(compra):
     sales_do_book = Sale.objects.filter(books=compra.book)
     for sale in sales_do_book:
-        user_sale = User_Sales(sale=sale, user=compra.user, state="1", purchase=compra)
+
+        #gera o id da oferta daquele usuario
+        person = Person.objects.get(cpf=compra.user)
+        id_user_sale = str(sale.id) + str(person.id) + str(compra.id)
+        
+        #salva na tabela as ofertas do usuario
+        user_sale = User_Sales(sale=sale, user=compra.user, state="1", purchase=compra, id_user_sale=)
         user_sale.save()
 
 
