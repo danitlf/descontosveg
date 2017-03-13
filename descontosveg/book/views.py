@@ -65,11 +65,19 @@ def send_email(request):
 @login_required
 def pedidos(request):
 
+
+
     
-    sales = User_Sales.objects.all()
-
-
-
+    usuario = request.user
+    compras = User_Sales.objects.get(user=usuario)
+    
+    
+    if compras:
+    
+    
+        sales = User_Sales.objects.all()
+    
+    
 
     return render(request, 'meus-pedidos.html', {'sales':sales, 'STATIC_URL': settings.STATIC_URL})        
 
