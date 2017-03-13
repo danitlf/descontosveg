@@ -1,42 +1,43 @@
 {% extends 'base.html' %}
 {% block content %}
 
+{% load staticfiles %}
 
-	<section class="container">
-	    <section class="login-form">
-			<div class="panel panel-default">
-				<div class="panel-body">
-					
-					<form method="post" role="form" >
-						{% csrf_token %}
-						
-						
-						<label>Login:</label>			
-						<input placeholder="" required class="form-control input-lg" id={{ form.username }}
-						
-						<label>Senha:</label>			
-						<input type="password" placeholder="" required class="form-control input-lg" id={{ form.password }}
-						
-						
-						<section>
-							<input type="checkbox" name="remember" value="1" /> Me lembre nesse computador <br />
-							
-						</section>
-						
-						<button type="submit" name="go" class="btn btn-lg btn-block btn-primary">Entrar</button>
-					
+ <link href="{% static 'css/login.css' %}" rel="stylesheet">
 
-					</form>
+ <div style="height:80px"> </div>
 
-					 {% if form.errors %}
+	
+
+<div class="container">
+
+   
+        <div class="card card-container">
+            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin" role="form" method="post">
+             {% csrf_token %}
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" class="form-control" placeholder="Digite seu CPF" required autofocus  id= {{ form.username }}  
+                <input type="password" class="form-control" placeholder="Digite sua senha" required id={{ form.password }}
+                <div id="remember" class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Me lembre
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
+            </form><!-- /form -->
+             {% if form.errors %}
                    <h4>*Seu login ou sua senha estão incorretos, tente novamente.</h4>
                    {% endif %}
 
-					
-				</div>
-				
-			</div>
-		</section>
-	</section>
+           <!-- <a href="#" class="forgot-password">
+                Forgot the password?
+            </a> --> 
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+
+
 {% endblock content %}
 	
