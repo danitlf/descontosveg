@@ -62,7 +62,7 @@ def send_email(request):
         return HttpResponse('Make sure all fields are entered and valid.')
 
 
-@login_required
+@login_required(login_url='/login/')
 def pedidos(request):
 
 

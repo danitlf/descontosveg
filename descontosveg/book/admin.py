@@ -48,7 +48,7 @@ class PartnerAdmin(admin.ModelAdmin):
     list_editable = ()
     list_editable = ()
     search_fields = ('name','cnpj','email','address','phone')
-    fields = ()
+    fields = ('name','cnpj','email','address','phone','password')
 
     
     

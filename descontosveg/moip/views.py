@@ -11,8 +11,12 @@ from rest_framework.response import Response
 import json
 from django.views.decorators.csrf import csrf_exempt
 from datetime import datetime
+from django.contrib.auth.decorators import login_required
 
 
+
+
+@login_required(login_url='/login/')
 def moipSend(request, id_book):
     book_selecionado = Book.objects.get(id=id_book)
     value = str(book_selecionado.value)
