@@ -1,9 +1,6 @@
 from django.contrib import admin
-
-
-
-
-from descontosveg.book.models import Book, Sale, Partner, Person
+from descontosveg.book.models import Book, Sale, Partner
+from django.contrib.auth.models import User
 
 
 
@@ -18,7 +15,7 @@ class BookAdmin(admin.ModelAdmin):
     list_display = ('name','description','status','value',)
     list_editable = ('value','status', )
     search_fields = ('name', )
-    
+
     
     fields = ()
     
@@ -47,29 +44,19 @@ admin.site.register(Sale, SaleAdmin)
 class PartnerAdmin(admin.ModelAdmin):
 
     
-    list_display = ('name','cnpj',)
+    list_display = ('name','cnpj','email','address','phone')
     list_editable = ()
     list_editable = ()
-    search_fields = ()
+    search_fields = ('name','cnpj','email','address','phone')
     fields = ()
+
     
     
     
 admin.site.register(Partner, PartnerAdmin)
 
 
-class PersonAdmin(admin.ModelAdmin):
 
-    
-    list_display =  ('partner','cpf',)
-    list_editable = ()
-    list_editable = ()
-    search_fields = ()
-    fields = ()
-    
-    
-    
-admin.site.register(Person, PersonAdmin)
 
 
 

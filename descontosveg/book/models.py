@@ -70,22 +70,24 @@ class Sale(Usual):
 
 class Partner(models.Model):
 
-    name = models.CharField(_('Nome'),max_length=100)     
-    cnpj = models.IntegerField(_('CNPJ')) 
+    name = models.CharField(_('Nome'),max_length=100,null=True, blank=True) 
+    email = models.CharField(_('Email'),max_length=100,null=True, blank=True)
+    address = models.CharField(_('Endereco'),max_length=100,null=True, blank=True)
+    phone = models.CharField(_('Telefone'),max_length=100,null=True, blank=True)     
+    cnpj = models.BigIntegerField(_('CNPJ')) 
+    password = models.CharField(_('Crie uma senha'),max_length=50,null=True, blank=True)
+
+
+    class Meta:
+        verbose_name = _('Parceiro')
+        verbose_name_plural = _('Parceiros')
 
 
     def __unicode__(self):
         return (self.name) 
 
 
-class Person(User):
 
-    cpf = models.CharField(_('CPF'),max_length=11)
-    partner = models.ForeignKey('Partner',verbose_name=_('Nome do Parceiro'))
-    
-
-    def __unicode__(self):
-        return (self.cpf)
 
 
 
