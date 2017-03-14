@@ -75,7 +75,12 @@ def atualiza_compra(dados):
 def insere_ofertas_do_usuario(compra):
     sales_do_book = Sale.objects.filter(books=compra.book)
     for sale in sales_do_book:
-        user_sale = User_Sales(sale=sale, user=compra.user, state="1", purchase=compra)
+
+        #gera o id da oferta daquele usuario
+        id_user_sale = str(sale.id) + str(compra.id_moip)
+        
+        #salva na tabela as ofertas do usuario
+        user_sale = User_Sales(sale=sale, user=compra.user, state="1", purchase=compra, id_user_sale=id_user_sale)
         user_sale.save()
 
 

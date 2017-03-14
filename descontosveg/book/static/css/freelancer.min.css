@@ -10,7 +10,7 @@ p.small {
     font-size: 16px;
 }
 a, a:hover, a:focus, a:active, a.active {
-    color: #18bc9c;
+    color: white;
     outline: medium none;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -33,7 +33,7 @@ hr.star-light, hr.star-primary {
     text-align: center;
 }
 hr.star-light::after, hr.star-primary::after {
-    content: "";
+    content: "Ã¯â‚¬â€¦";
     display: inline-block;
     font-family: FontAwesome;
     font-size: 2em;
@@ -280,8 +280,9 @@ footer .footer-col {
     margin-bottom: 50px;
 }
 footer .footer-below {
-    background-color: #233140;
+    background-color: #ffffff;
     padding: 25px 0;
+    color: black;
 }
 .btn-outline {
     background: transparent none repeat scroll 0 0;
