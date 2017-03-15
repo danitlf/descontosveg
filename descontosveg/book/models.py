@@ -70,7 +70,7 @@ class Sale(Usual):
 
 class Partner(models.Model):
 
-    name = models.CharField(_('Nome'),max_length=100,null=True, blank=True) 
+    name = models.CharField(_('Nome'),max_length=110,null=True, blank=True) 
     email = models.CharField(_('Email'),max_length=100,null=True, blank=True)
     address = models.CharField(_('Endereco'),max_length=100,null=True, blank=True)
     phone = models.CharField(_('Telefone'),max_length=100,null=True, blank=True)     
