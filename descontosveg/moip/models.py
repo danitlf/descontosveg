@@ -47,5 +47,5 @@ class User_Sales(models.Model):
     state = models.CharField(_('status'),max_length=1, choices=STATUS_CHOICES2)
     user = models.CharField(_('CPF'), null=True, blank=True,max_length=11)
     purchase = models.ForeignKey('Purchase')
-    id_user_sale = models.CharField(_('ID_OFERTA_USUARIO'), null=True, blank=True, max_length=500)
+    id_user_sale = models.CharField(_('ID_OFERTA_USUARIO'), null=True, blank=True, max_length=501)
 

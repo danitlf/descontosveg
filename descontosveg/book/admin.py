@@ -43,17 +43,25 @@ admin.site.register(Sale, SaleAdmin)
 
 class PartnerAdmin(admin.ModelAdmin):
 
+
+
     
-    list_display = ('name','cnpj','email','address','phone')
+    list_display = ('name','user','email','address','phone')
     list_editable = ()
     list_editable = ()
-    search_fields = ('name','cnpj','email','address','phone')
-    fields = ('name','cnpj','email','address','phone','password')
+    search_fields = ('name','user','email','address','phone')
+    fields = ('name','user','email','address','phone')
 
     
     
     
 admin.site.register(Partner, PartnerAdmin)
+
+
+
+
+
+
 
 
 

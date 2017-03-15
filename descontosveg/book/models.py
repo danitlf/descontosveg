@@ -74,8 +74,7 @@ class Partner(models.Model):
     email = models.CharField(_('Email'),max_length=100,null=True, blank=True)
     address = models.CharField(_('Endereco'),max_length=100,null=True, blank=True)
     phone = models.CharField(_('Telefone'),max_length=100,null=True, blank=True)     
-    cnpj = models.BigIntegerField(_('CNPJ')) 
-    password = models.CharField(_('Crie uma senha'),max_length=50,null=True, blank=True)
+    user = models.ForeignKey(User, null=True, blank=True)
 
 
     class Meta:
