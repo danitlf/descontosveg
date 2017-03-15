@@ -67,7 +67,3 @@ admin.site.register(Partner, PartnerAdmin)
 
 
 
-
-
-
-
