@@ -18,7 +18,6 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
-
 from django.conf.urls import url
 from django.contrib import admin
 from descontosveg.book import views
