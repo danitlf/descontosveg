@@ -158,7 +158,7 @@ header .intro-text .skills {
 }
 }
 section {
-    padding: 100px 0;
+    padding: 2% 0;
 }
 section h2 {
     font-size: 3em;
@@ -421,6 +421,19 @@ footer .footer-below {
     display: none;
     opacity: 0;
 }
+
+
+.intro-header {
+    background: rgba(0, 0, 0, 0.5) url("../img/Camada25.png") no-repeat scroll center center / cover ;
+    color: #f8f8f8;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    text-align: center;
+
+
+}
+
+
 
 
 

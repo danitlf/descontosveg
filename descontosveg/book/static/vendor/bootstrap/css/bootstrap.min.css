@@ -2609,9 +2609,9 @@ a.btn.disabled, fieldset[disabled] a.btn {
     pointer-events: none;
 }
 .btn-default {
-    background-color: #fff;
-    border-color: #ccc;
-    color: #333;
+    background-color: #0c8059;
+    border-color: #0c8059;
+    color: white;
 }
 .btn-default.focus, .btn-default:focus {
     background-color: #e6e6e6;
@@ -2619,9 +2619,9 @@ a.btn.disabled, fieldset[disabled] a.btn {
     color: #333;
 }
 .btn-default:hover {
-    background-color: #e6e6e6;
-    border-color: #adadad;
-    color: #333;
+    background-color: white;
+    border-color: white;
+    color: #0c8059;
 }
 .btn-default.active, .btn-default:active, .open > .dropdown-toggle.btn-default {
     background-color: #e6e6e6;
@@ -3559,7 +3559,7 @@ select.input-group-sm[multiple] > .form-control, select.input-group-sm[multiple]
     font-size: 18px;
     height: 50px;
     line-height: 20px;
-    padding-top: 5px; 
+    padding-top: 5px;
 }
 .navbar-brand:focus, .navbar-brand:hover {
     text-decoration: none;
