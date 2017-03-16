@@ -73,7 +73,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">Books</a>
+                        <a href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="page-scroll">
                         <a href="{% url 'sobre' %}">Sobre </a>
@@ -84,7 +84,7 @@
                     </li>
                      {% if user.is_anonymous %}
                     <li class="page-scroll">
-                        <a href="{% url 'cadastro' %}" class="btn-login">Entrar ou cadastrar</a>
+                        <a href="{% url 'login' %}" class="btn-login">Entrar ou cadastrar</a>
                     </li>
                     {% else %}
                     <li class="page-scroll">
@@ -128,7 +128,7 @@
 
 <!-- início do footer --> 
 
-<footer class="text-center">
+<footer class="text-center" style="padding-top:100px; margin-top: 100px; ">
 
 
         <div class="footer-above">
@@ -141,19 +141,16 @@
                     <div class="footer-col col-md-4">
                         
                         
-                        <p><a href=""> Sobre</a></p>
+                        <p><a href="{% url 'sobre' %}"> Sobre</a></p>
                         <p><a href=""> Parceiros</a></p>
                         <p><a href=""> Dúvidas</a></p>
-                        <p><a href=""> Contatos</a></p>
+                        <p><a href="{% url 'contato' %}"> Contatos</a></p>
                     </div>
                     <div class="footer-col col-md-4">
                         <img alt="Brand" src="{% static '/img/Logoveg.png'%}">
                         <ul class="list-inline">
                             <li>
                                 <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-youtube"></i></a>
                             </li>
                             <li>
                                 <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-instagram"></i></a>
