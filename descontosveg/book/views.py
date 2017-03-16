@@ -21,11 +21,10 @@ def home(request):
     
     book = Book.objects.all()
     sale = Sale.objects.all()
-    form_class = ContactForm
 
 
 
-    return render(request, 'index.html', {'form': form_class,'book':book,'sale':sale, 'STATIC_URL': settings.STATIC_URL})
+    return render(request, 'index.html', {'book':book,'sale':sale, 'STATIC_URL': settings.STATIC_URL})
 
 
 def cadastro(request):
@@ -97,4 +96,22 @@ def login(request, template_name="login2.html"):
     
     #se nenhuma informacao for passada, exibe a pagina de login com o formulario
     return render(request, template_name, {"form": AuthenticationForm(),'STATIC_URL': settings.STATIC_URL})
+
+
+
+def contato(request):
+
+    
+    form_class = ContactForm
+
+
+
+    return render(request, 'contato.html', {'form': form_class,'STATIC_URL': settings.STATIC_URL})
+
+
+def sobre(request):
+
+
+    return render(request, 'contato.html')
+
 

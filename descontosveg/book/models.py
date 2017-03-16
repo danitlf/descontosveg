@@ -3,19 +3,10 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 
 
-
-
-
-
 STATUS_CHOICES = (
     ('d', 'Despublicado'),
     ('p', 'Publicado'),    
 )
-
-
-
-
-
 
 
 class Usual(models.Model):
@@ -31,15 +22,7 @@ class Usual(models.Model):
         abstract = True
 
 
-
-
-
 class Book(Usual): 
-
-    
-
-
-
 
     class Meta:
         verbose_name = _('Livro')
@@ -49,15 +32,10 @@ class Book(Usual):
         return (self.name)
 
 
-
-
-
 class Sale(Usual):
 
     partner = models.ForeignKey('Partner')
     books = models.ForeignKey('Book',verbose_name=_('Livro'))
-
-
 
 
     class Meta:
