@@ -1,6 +1,9 @@
 import os
 from unipath import Path
 import dj_database_url
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 PROJECT_DIR = Path(__file__).parent
 
@@ -162,6 +165,13 @@ STATIC_ROOT = PROJECT_DIR.child('staticfiles',)
 MEDIA_ROOT = PROJECT_DIR.child('media')
 
 MEDIA_URL = '/media/'
+
+
+cloudinary.config( 
+  cloud_name = "hu5jsgcmn", 
+  api_key = "389482874992918", 
+  api_secret = "GYI00jdG7ps4PWBLfaRwzmjFa4U" 
+)
 
 # AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
 #     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
