@@ -15,8 +15,7 @@ a, a:hover, a:focus, a:active, a.active {
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-weight: 500;
 }
 hr.star-light, hr.star-primary {
     -moz-border-bottom-colors: none;
@@ -319,14 +318,14 @@ footer .footer-below {
     color: #2c3e50;
 }
 .btn-success {
-    background-color: #18bc9c;
-    border-color: #18bc9c;
+    background-color: #0c8059;
+    border-color: #0c8059;
     color: white;
     font-weight: 700;
 }
 .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open .dropdown-toggle.btn-success {
-    background-color: #128f76;
-    border-color: #11866f;
+    background-color: #0c8059;
+    border-color: #0c8059;
     color: white;
 }
 .btn-success:active, .btn-success.active, .open .dropdown-toggle.btn-success {
@@ -421,19 +420,10 @@ footer .footer-below {
     display: none;
     opacity: 0;
 }
-
-
 .intro-header {
     background: rgba(0, 0, 0, 0.5) url("../img/Camada25.png") no-repeat scroll center center / cover ;
     color: #f8f8f8;
     padding-bottom: 50px;
     padding-top: 50px;
     text-align: center;
-
-
 }
-
-
-
-
-

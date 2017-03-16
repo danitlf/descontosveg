@@ -4,10 +4,10 @@ from django.utils.translation import ugettext_lazy as _
 
 # our new form
 class ContactForm(forms.Form):
-    contact_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Nome', 'id':'name', 'data-validation-required-message':'Please enter your name.'}))
-    contact_email = forms.EmailField(required=True, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'E-mail', 'id':'email', 'data-validation-required-message':'Please enter your email adress.'}))
+    contact_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Nome', 'id':'name', 'data-validation-required-message':'Escreva um nome.'}))
+    contact_email = forms.EmailField(required=True, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'E-mail', 'id':'email', 'data-validation-required-message':'Digite um e-mail.'}))
     content = forms.CharField(
-        required=True, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Content of email', 'id':'content', 'data-validation-required-message':'Please enter a content.'})
+        required=True, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Digite sua mensagem', 'id':'content', 'data-validation-required-message':'Please enter a content.'})
     )
 
 
