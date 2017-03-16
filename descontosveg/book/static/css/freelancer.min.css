@@ -176,6 +176,7 @@ section.first {
 }
 }
 #portfolio .portfolio-item {
+    height: 300px;
     margin: 0 0 15px;
     right: 0;
 }
@@ -427,3 +428,13 @@ footer .footer-below {
     padding-top: 50px;
     text-align: center;
 }
+
+#portfolio .portfolio-item .portfolio-caption {
+    background-color: #0c8059;
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 25px;
+    text-align: left;
+    color:white;
+}
+
