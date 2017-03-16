@@ -112,6 +112,6 @@ def contato(request):
 def sobre(request):
 
 
-    return render(request, 'contato.html')
+    return render(request, 'sobre.html')
 
 
