@@ -18,7 +18,6 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
-
 from django.conf.urls import url
 from django.contrib import admin
 from descontosveg.book import views
@@ -39,7 +38,7 @@ urlpatterns = [
     url(r'^sobre/$', views.sobre, name='sobre'),
     
 
-    url(r'^login/$', auth_views.login, {'template_name': 'login2.html'}),
+    url(r'^login/$', auth_views.login, {'template_name': 'login2.html'}, name="login"),
 
     url(r'^logout/$', auth_views.logout, name='logout'),
 
