@@ -161,23 +161,23 @@ STATIC_ROOT = PROJECT_DIR.child('staticfiles',)
 
 MEDIA_ROOT = PROJECT_DIR.child('media')
 
-#MEDIA_URL = '/media/'
+MEDIA_URL = '/media/'
 
-AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
-    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-    'Cache-Control': 'max-age=94608000',
-}
+# AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
+#     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+#     'Cache-Control': 'max-age=94608000',
+# }
 
-AWS_STORAGE_BUCKET_NAME = 'vegdescontos'
-AWS_ACCESS_KEY_ID = 'AKIAIB3MQJ2FOH33GERA'
-AWS_SECRET_ACCESS_KEY = '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'
-
-
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+# AWS_STORAGE_BUCKET_NAME = 'vegdescontos'
+# AWS_ACCESS_KEY_ID = 'AKIAIB3MQJ2FOH33GERA'
+# AWS_SECRET_ACCESS_KEY = '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'
 
 
-MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+
+# MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 
 
