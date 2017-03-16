@@ -73,11 +73,11 @@
                         <a href="#portfolio">Books</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">Sobre o descontosVEG</a>
+                        <a href="{% url 'sobre' %}">Sobre </a>
                     </li>
                     
                     <li class="page-scroll">
-                        <a href="#contact">Contato</a>
+                        <a href="{% url 'contato' %}">Contato</a>
                     </li>
                      {% if user.is_anonymous %}
                     <li class="page-scroll">
