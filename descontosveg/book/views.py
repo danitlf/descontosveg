@@ -11,6 +11,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
+from django.contrib import messages
 
 
 # Create your views here.
@@ -55,7 +56,8 @@ def send_email(request):
             send_mail(subject, message, from_email, ['descontosveg@gmail.com'])
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
-        return HttpResponse('thanks')
+        messages.success(request, 'Mensagem enviada com sucesso')
+
     else:
         # In reality we'd use a form class
         # to get proper validation errors.
