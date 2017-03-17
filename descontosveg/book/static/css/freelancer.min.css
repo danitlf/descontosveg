@@ -176,6 +176,7 @@ section.first {
 }
 }
 #portfolio .portfolio-item {
+    height: 300px;
     margin: 0 0 15px;
     right: 0;
 }
@@ -428,6 +429,7 @@ footer .footer-below {
     text-align: center;
 }
 
+
 @media (min-width: 768px){#entrar_cadastrar{
     background-color: #f8f8f8;
     border-radius: 5px;
@@ -447,3 +449,22 @@ footer .footer-below {
     padding-left: 10px;
 }
 }
+
+#portfolio .portfolio-item .portfolio-caption {
+    background-color: #0c8059;
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 25px;
+    text-align: left;
+    color:white;
+    margin-bottom: 50px;
+}
+
+.oferta {
+
+    width: 400px; 
+    height: 289px;
+
+}
+
+
