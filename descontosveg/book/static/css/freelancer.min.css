@@ -431,10 +431,44 @@ footer .footer-below {
 
 
 
+@media (min-width: 768px){#entrar_cadastrar{
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    
+}
+}
+
+@media (min-width: 768px){#texto_entrar_cadastrar{
+    color: #0c8059;
+    
+}
+}
+
+@media (min-width: 768px){.nav > li > .menu_link {
+    padding: 8px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+}
+
+#portfolio .portfolio-item .portfolio-caption {
+    background-color: #0c8059;
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 25px;
+    text-align: left;
+    color:white;
+    margin-bottom: 50px;
+}
+
+
 .oferta {
 
     width: 400px; 
     height: 289px;
 
 }
+
+
+
 
