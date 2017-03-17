@@ -436,5 +436,13 @@ footer .footer-below {
     padding: 25px;
     text-align: left;
     color:white;
+    margin-bottom: 50px;
+}
+
+.oferta {
+
+    width: 400px; 
+    height: 289px;
+
 }
 
