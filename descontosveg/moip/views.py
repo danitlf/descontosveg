@@ -12,7 +12,9 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
-
+import sys    # sys.setdefaultencoding is cancelled by site.py
+reload(sys)    # to re-enable sys.setdefaultencoding()
+sys.setdefaultencoding('utf-8')
 
 
 
@@ -20,7 +22,7 @@ from django.contrib.auth.decorators import login_required
 def moipSend(request, id_book):
     book_selecionado = Book.objects.get(id=id_book)
     value = str(book_selecionado.value)
-    razao = book_selecionado.name
+    razao = str(book_selecionado.name)
 
     #creating obj of Purchase
     purchase = Purchase(state="0", value=book_selecionado.value, book=book_selecionado, user=request.user)
@@ -32,7 +34,7 @@ def moipSend(request, id_book):
     moip.set_id_proprio(str(purchase.id))
     moip.envia()
     resposta = moip.get_resposta()
-
+    print resposta
     return HttpResponseRedirect("https://desenvolvedor.moip.com.br/sandbox/Instrucao.do?token="+str(resposta['token']))
 
 
