@@ -70,25 +70,25 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
-                        <a href="#page-top"></a>
+                        <a class="menu_link" href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="{% url 'home' %}">Home</a>
+                        <a class="menu_link" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="{% url 'sobre' %}">Sobre </a>
+                        <a class="menu_link" href="{% url 'sobre' %}">Sobre </a>
                     </li>
                     
                     <li class="page-scroll">
-                        <a href="{% url 'contato' %}">Contato</a>
+                        <a class="menu_link" href="{% url 'contato' %}">Contato</a>
                     </li>
                      {% if user.is_anonymous %}
-                    <li class="page-scroll">
-                        <a href="{% url 'login' %}" class="btn-login">Entrar ou cadastrar</a>
+                    <li class="page-scroll" id="entrar_cadastrar">
+                        <a id="texto_entrar_cadastrar" href="{% url 'login' %}" class="btn-login menu_link">Entrar ou cadastrar</a>
                     </li>
                     {% else %}
                     <li class="page-scroll">
-                        <a href="#" data-toggle="dropdown">Olá, {{ user.first_name }}</a>
+                        <a class="menu_link" href="#" data-toggle="dropdown">Olá, {{ user.first_name }}</a>
 
                         <ul class="dropdown-menu">
                         <li><a href="{% url 'pedidos' %}">Meus pedidos</a></li>

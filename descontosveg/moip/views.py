@@ -34,7 +34,6 @@ def moipSend(request, id_book):
     moip.set_id_proprio(str(purchase.id))
     moip.envia()
     resposta = moip.get_resposta()
-    print resposta
     return HttpResponseRedirect("https://desenvolvedor.moip.com.br/sandbox/Instrucao.do?token="+str(resposta['token']))
 
 
