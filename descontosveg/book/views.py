@@ -11,9 +11,25 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
+from django.contrib import messages
+
+
+
+
+def custom404(request):
+    return render(request, '404.html', status=404)
+
 
 
 # Create your views here.
+
+
+def breve(request):
+
+    #context = {'STATIC_URL': settings.STATIC_URL}
+
+    return render(request, 'em-breve.html')
+
 
 
 def home(request):
@@ -55,7 +71,8 @@ def send_email(request):
             send_mail(subject, message, from_email, ['descontosveg@gmail.com'])
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
-        return HttpResponse('thanks')
+        messages.success(request, 'Mensagem enviada com sucesso')
+
     else:
         # In reality we'd use a form class
         # to get proper validation errors.

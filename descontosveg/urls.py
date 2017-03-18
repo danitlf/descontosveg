@@ -16,8 +16,7 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
-
+from django.conf.urls import handler404
 from django.conf.urls import url
 from django.contrib import admin
 from descontosveg.book import views
@@ -25,23 +24,34 @@ from descontosveg.moip import views as view_moip
 from django.contrib.auth import views as auth_views
 
 
+
+handler404 = 'book.views.custom404'
+
+
+
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^$', views.home, name='home'),
-    url(r'^moip/(\d)$', view_moip.moipSend, name='moipSend'),
-    url(r'^moip/response/$', view_moip.moipResponse, name='moipSend'),
-    url(r'^formmoip/$', view_moip.formMoip, name='formMoip'),
-    url(r'^send_email/$', views.send_email, name='send_email'),
-    url(r'^cadastro/$', views.cadastro, name='cadastro'),
-    url(r'^pedidos/$', views.pedidos, name='pedidos'),
-    url(r'^contato/$', views.contato, name='contato'),
-    url(r'^sobre/$', views.sobre, name='sobre'),
+    
+    url(r'^$', views.breve, name='breve'),
+
+
+   
+    
+    #url(r'^admin/', admin.site.urls),
+    #url(r'^moip/(\d)$', view_moip.moipSend, name='moipSend'),
+    #url(r'^moip/response/$', view_moip.moipResponse, name='moipSend'),
+    #url(r'^formmoip/$', view_moip.formMoip, name='formMoip'),
+    #url(r'^send_email/$', views.send_email, name='send_email'),
+    #url(r'^cadastro/$', views.cadastro, name='cadastro'),
+    #url(r'^pedidos/$', views.pedidos, name='pedidos'),
+    #url(r'^contato/$', views.contato, name='contato'),
+    #url(r'^sobre/$', views.sobre, name='sobre'),
     
 
-    url(r'^login/$', auth_views.login, {'template_name': 'login2.html'}, name="login"),
+    #url(r'^login/$', auth_views.login, {'template_name': 'login2.html'}, name="login"),
 
-    url(r'^logout/$', auth_views.logout, name='logout'),
-
+    #url(r'^logout/$', auth_views.logout, name='logout'),
+    
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
