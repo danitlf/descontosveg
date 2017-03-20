@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div style="height:80px"> </div>
+
+
 
 
 <div class="container">
@@ -17,38 +20,47 @@
     <section id="portfolio">
         <div class="container">
 
+
+
             <div class="row">
 
-                 {% for compras in compras %}
-
-                 {% if compras > 0 %}
-                   
-                    
-
-      
                 
 
                 <div class="row">
   <div class="col-sm-4 portfolio-item">
+
+     {% for compras in compras %}
+
+                 {% if compras != '' %}
+                   
     <div class="thumbnail">
 
        
-        <img src="{{ MEDIA_URL }}{{sales.image}}" > 
+        <img src="{{ MEDIA_URL }}{{compras.sale.image}}" > 
       
-      <div class="caption">
-        <h3>{{compras.sales.user}}</h3>
-        <h3>{{compras.sales.purchase}}</h3>
-        <p>{{compras.status}}</p>
-        <p>Valor: R$ {{compras.sales.purchase.value}}</p>
+      <div class="caption" style="color:black">
+        <h3>{{compras.sale.name}}</h3>
+        {% if compras.state == '1' %}
+        <p> Disponível</p>
+        {% else %}
+        <p> Utilizado</p>
+        {%  endif %}
+        
+        <p> Valor: R$ {{compras.sale.value}}</p>
+        <p> Número do pedido:{{compras.id_user_sale}}</p>
         
       </div>
     </div>
   </div>
-</div>
-              
-              {% else %}  
+
+   {% else %}  
 
 <h1> Não existem pedidos ativos em seu nome </h1>
+
+
+</div>
+              
+             
 
 
 

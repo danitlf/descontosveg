@@ -87,7 +87,7 @@ def pedidos(request):
 
     
     usuario = request.user
-    compras = User_Sales.objects.filter(sale_id=usuario)
+    compras = User_Sales.objects.filter(user=usuario)
     
     
 
