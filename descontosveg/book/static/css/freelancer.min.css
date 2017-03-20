@@ -479,3 +479,8 @@ footer .footer-below {
 } */
 
 
+git remote add heroku git@heroku.com:descontosvegdev.git
+git remote add staging git@heroku.com:descontosvegdev.git
+
+
+
