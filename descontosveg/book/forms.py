@@ -19,8 +19,8 @@ class UserForm(forms.ModelForm):
 
 
     first_name = forms.CharField(label=_(u'Primeiro nome'),required=True, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Primeiro nome', 'id':'name', 'data-validation-required-message':'Please enter your name.'}))
-    last_name = forms.CharField(label=_(u'Ultimo nome'),required=True, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Primeiro nome', 'id':'name2', 'data-validation-required-message':'Por favor, digite seu ultimo nome.'}))
-    username = forms.CharField(label=_(u'CPF'),required=True, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Nome', 'id':'name','data-validation-required-message':'Please enter your name.'}))
+    last_name = forms.CharField(label=_(u'Ultimo nome'),required=True, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Sobrenome', 'id':'name2', 'data-validation-required-message':'Por favor, digite seu ultimo nome.'}))
+    username = forms.CharField(label=_(u'CPF'),required=True, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'CPF', 'id':'name','data-validation-required-message':'Please enter your name.'}))
     email = forms.EmailField(required=True, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'E-mail', 'id':'email', 'data-validation-required-message':'Please enter your email adress.'}))
     password = forms.CharField(
         required=True, widget=forms.PasswordInput(attrs={'class':'form-control', 'placeholder':'Crie uma senha', 'id':'content', 'data-validation-required-message':'Please enter a content.'})

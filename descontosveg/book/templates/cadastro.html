@@ -1,36 +1,67 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 
 
 <p></p>
-<br> 
+<br>
 
-<div class="container"> 
-	<br><br><br>
+<div class="container">
+    <br><br><br>
 
-<div class="row-fluid">
-   <div class="">
+    <div class="row-fluid">
+        <div class="">
 
-  	<h2>Crie seu cadastro</h2>
-                       
-
+            <h2>Crie seu cadastro</h2>
 
 
 
-<div class="row">
 
-	
+
+           <div style="padding-top: 2%;" class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     <form method="post" action="">
-    {% csrf_token %}
-    {{ formUser }}
-    <br>
-    <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
-</form>
+                        {% csrf_token %}
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Primeiro Nome</label>
+                                {{ formUser.first_name }}
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Sobrenome</label>
+                                {{ formUser.last_name }}
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>CPF</label>
+                                {{ formUser.username }}
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>E-mail</label>
+                                {{ formUser.email }}
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Senha</label>
+                                {{ formUser.password }}
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
+                    </form>
                 </div>
 
-<h4>  Já possui cadastro? Faça seu <a style="color:#0c8059;"  href="/login"> login </a>  </h4>
+                <h4> Já possui cadastro? Faça seu <a style="color:#0c8059;" href="/login"> login </a> </h4>
 
 
             </div>
@@ -38,16 +69,16 @@
 
 
 
-        </div> 
-
- 
+        </div>
 
 
-  
 
 
-  </div>
- 
+
+
+
+    </div>
+
 
 
 
