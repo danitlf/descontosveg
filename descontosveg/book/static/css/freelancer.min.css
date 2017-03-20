@@ -422,11 +422,15 @@ footer .footer-below {
     opacity: 0;
 }
 .intro-header {
-    background: rgba(0, 0, 0, 0.5) url("../img/Camada25.png") no-repeat scroll center center / cover ;
+    
+    background: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.7)),
+    url(../img/restaurante-vegetariano.jpg) no-repeat;
     color: #f8f8f8;
     padding-bottom: 50px;
     padding-top: 50px;
     text-align: center;
+    width: 100%;
+    background-size: 100%
 }
 
 
