@@ -133,3 +133,12 @@ def sobre(request):
     return render(request, 'sobre.html')
 
 
+
+def ofertas(request,id):
+     book = Book.objects.get(id=id)
+     sales = Sale.objects.filter(books_id=book)
+     context = { 'sales': sales, 'title':sales[0] }
+     return render(request, 'ofertas.html', context)
+
+
+

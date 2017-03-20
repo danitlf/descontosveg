@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<p>&nbsp</p>
+<p>&nbsp</p>
+<br> 
+
+
+
+<section id="portfolio">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 text-center">
+
+
+                    
+                   
+                    <h3 class="section-subheading text-muted">Todas essas ofertas por <strong> {{title.books.value }}  </strong> <a href="moip/{{sales.books.id}}" class="btn btn-primary" role="button">Comprar agora</a> </h3>
+
+
+                   
+</div>
+
+
+
+
+</div> 
+
+</div>
+
+
+</section>
+
+
+
+<div class="container"> 
+<div class="row">
+  {% for sales in sales %}
+  {% if sales.status == "p" %} 
+
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{ MEDIA_URL }}{{sales.image}}" alt="...">
+      <div class="caption">
+        <h3>{{sales.name}}</h3>
+        <p>{{sales.description}}</p>
+        <p> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+
+
+{% endif %}
+{% endfor %}
+
+
+
+</div>
+</div> 
+
+
+
+
+
+
+
+
+
+{% endblock content %}
