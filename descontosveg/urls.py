@@ -32,12 +32,13 @@ urlpatterns = [
     url(r'^moip/response/$', view_moip.moipResponse, name='moipSend'),
     url(r'^formmoip/$', view_moip.formMoip, name='formMoip'),
     url(r'^send_email/$', views.send_email, name='send_email'),
-    url(r'^send_email/sucesso/$', views.email_enviado, name='send_email'),
+    url(r'^send_email/sucesso/$', views.email_enviado, name='send_email_sucesso'),
     url(r'^cadastro/$', views.cadastro, name='cadastro'),
     url(r'^pedidos/$', views.pedidos, name='pedidos'),
     url(r'^contato/$', views.contato, name='contato'),
     url(r'^sobre/$', views.sobre, name='sobre'),
-     url(r'^ofertas/(\d)$', views.ofertas, name='ofertas'),
+    url(r'^ofertas/(\d)$', views.ofertas, name='ofertas'),
+    url(r'^como_funciona/$', views.como_funciona, name='como_funciona'),
     
 
     url(r'^login/$', auth_views.login, {'template_name': 'login2.html'}, name="login"),

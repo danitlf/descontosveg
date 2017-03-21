@@ -16,6 +16,9 @@ from django.contrib import messages
 
 
 
+def como_funciona(request):
+    return render(request, 'como_funciona.html')
+
 def custom404(request):
     return render(request, '404.html', status=404)
 
