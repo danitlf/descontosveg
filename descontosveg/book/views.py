@@ -143,3 +143,10 @@ def ofertas(request,id):
 
 
 
+def detalhes(request,id):
+     sales = Sale.objects.filter(id=id)
+     context = { 'sales': sales, 'title':sales[0] }
+     return render(request, 'detalhes-oferta.html', context)
+
+
+

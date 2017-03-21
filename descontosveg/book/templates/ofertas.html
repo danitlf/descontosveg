@@ -46,7 +46,7 @@
       <div class="caption" style="color:black">
         <h3>{{sales.name}}</h3>
         <p>{{sales.description}}</p>
-        <p> <a href="#" class="btn btn-default" role="button">Detalhes da oferta</a></p>
+        <p> <a href="{% url 'detalhes' sales.id %}" class="btn btn-default" role="button">Detalhes da oferta</a></p>
       </div>
     </div>
   </div>
