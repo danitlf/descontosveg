@@ -1,34 +1,42 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %} {% load staticfiles %}
 
-{% load staticfiles %}
+<link href="{% static 'css/login.css' %}" rel="stylesheet">
 
- <link href="{% static 'css/login.css' %}" rel="stylesheet">
+<div style="height:80px"> </div>
 
- <div style="height:80px"> </div>
 
-	
 
 <div class="container">
 
-       
-        <div class="card card-container">
 
-            <h4> Acesse sua conta, aproveite os melhores descontos </h4> 
+    <div style="padding-top: 2%;" class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+
+            <h4> Acesse sua conta, aproveite os melhores descontos </h4>
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-            
+
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin" role="form" method="post">
-             {% csrf_token %}
+                {% csrf_token %}
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="text" class="form-control" placeholder="Digite seu CPF" required autofocus  id= {{ form.username }}  
-                <input type="password" class="form-control" placeholder="Digite sua senha" required id={{ form.password }}
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>CPF</label>
+                        <input type="text" class="form-control" placeholder="Digite seu CPF" required autofocus id={{ form.username }}
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>Senha</label>
+                        <input type="password" class="form-control" placeholder="Digite sua senha" required id={{ form.password }}
+                    </div>
+                </div>
                 <div id="remember" class="checkbox">
                     <label>
                         {% comment %}<input type="checkbox" value="remember-me"> Me lembre{% endcomment %}
                     </label>
 
-                    
+
                 </div>
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
 
@@ -36,17 +44,20 @@
                         Ainda não é cadastrado? <a style="color:#0c8059;" href="/cadastro" >clique aqui</a>
                     </label>
 
-            </form><!-- /form -->
-             {% if form.errors %}
-                   <h4>*Seu login ou sua senha estão incorretos, tente novamente.</h4>
-                   {% endif %}
+            </form>
+            <!-- /form -->
+            {% if form.errors %}
+            <h4>*Seu login ou sua senha estão incorretos, tente novamente.</h4>
+            {% endif %}
 
-           <!-- <a href="#" class="forgot-password">
+            <!-- <a href="#" class="forgot-password">
                 Forgot the password?
-            </a> --> 
-        </div><!-- /card-container -->
-    </div><!-- /container -->
+            </a> -->
+        </div>
+    </div>
+    <!-- /card-container -->
+</div>
+<!-- /container -->
 
 
 {% endblock content %}
-	
