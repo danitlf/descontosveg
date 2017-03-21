@@ -69,6 +69,7 @@ def send_email(request):
     if subject and message and from_email:
         try:
             send_mail(subject, message, from_email, ['descontosveg@gmail.com'])
+            return HttpResponseRedirect('/send_email/sucesso/')
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
         messages.success(request, 'Mensagem enviada com sucesso')
@@ -78,6 +79,8 @@ def send_email(request):
         # to get proper validation errors.
         return HttpResponse('Make sure all fields are entered and valid.')
 
+def email_enviado(request):
+    return render(request, 'mensagem_enviada.html')
 
 @login_required(login_url='/login/')
 

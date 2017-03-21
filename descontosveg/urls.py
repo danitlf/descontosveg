@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^moip/response/$', view_moip.moipResponse, name='moipSend'),
     url(r'^formmoip/$', view_moip.formMoip, name='formMoip'),
     url(r'^send_email/$', views.send_email, name='send_email'),
+    url(r'^send_email/sucesso/$', views.email_enviado, name='send_email'),
     url(r'^cadastro/$', views.cadastro, name='cadastro'),
     url(r'^pedidos/$', views.pedidos, name='pedidos'),
     url(r'^contato/$', views.contato, name='contato'),
