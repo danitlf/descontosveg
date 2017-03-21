@@ -472,6 +472,12 @@ footer .footer-below {
     height: 289px;
 
 }
+@media (min-width: 768px){
+#formLogin{
+    padding-top: 2%;
+     padding-left: 13%;
+}
+}
 
 /*
 #livros{
