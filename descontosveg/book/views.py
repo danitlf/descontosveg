@@ -59,7 +59,7 @@ def cadastro(request):
     return render(request, 'cadastro.html',{'formUser': formUser,'STATIC_URL': settings.STATIC_URL})    
 
 
-
+#test
 
 def send_email(request):
     subject = request.POST.get('contact_name')
