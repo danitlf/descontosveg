@@ -79,3 +79,9 @@
 .forgot-password:hover, .forgot-password:active, .forgot-password:focus {
     color: rgb(12, 97, 33);
 }
+
+@media (min-width: 768px){#form_login{
+    padding-top: 2%;
+     padding-left: 13%;
+}
+}
