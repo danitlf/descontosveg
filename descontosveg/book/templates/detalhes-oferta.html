@@ -1,0 +1,62 @@
+
+
+{% extends 'base.html' %} {% block content %}
+
+
+<div style="height:120px"> </div>
+
+
+   
+
+
+<div class= "container"> 
+	{% for sales in sales %}
+
+<div class="content-section-a">
+
+<div class="row">
+<div class="col-lg-5 col-sm-6">
+<hr class="section-heading-spacer">
+<div class="clearfix"></div>
+<h2 class="section-heading">
+{{sales.name}}
+<br>
+
+</h2>
+<p class="">
+{{sales.description}}
+</p>
+
+
+<p class="lead">
+<em class="regras"> Onde usar: </em> {{sales.partner.name}}
+</p>
+<p class="lead">
+<em class="regras"> Endereço: </em>  {{sales.partner.address}}
+</p>
+<p class="lead">
+<em class="regras"> Telefone: </em>  {{sales.partner.phone}}
+</p>
+<h3 style="text-transform: uppercase"> Regras de uso</h3>
+<p class="lead">
+{{sales.rules}}
+</p>
+<h3 style="text-transform: uppercase"> Validade</h3>
+<p class="lead">
+{{sales.validity}}
+</p>
+</div>
+<div class="col-lg-5 col-lg-offset-2 col-sm-6">
+<img class="img-responsive" alt="" src="{{ MEDIA_URL }}{{sales.image}}">
+</div>
+</div>
+</div>
+{% endfor %}
+</div> 
+
+
+<div style="height:20px"> </div>
+
+
+
+{% endblock content %}
