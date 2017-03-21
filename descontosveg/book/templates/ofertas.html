@@ -16,7 +16,7 @@
 
                     
                    
-                    <h3 class="section-subheading text-muted">Todas essas ofertas por <strong> {{title.books.value }}  </strong> <a href="moip/{{title.books.id}}" class="btn btn-primary" role="button">Comprar agora</a> </h3>
+                    <h3 class="section-subheading text-muted">Todas essas ofertas por <strong>R$: {{title.books.value }}  </strong> <a href="moip/{{title.books.id}}" class="btn btn-primary" role="button">Comprar agora</a> </h3>
 
 
                    
@@ -43,10 +43,10 @@
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
       <img src="{{ MEDIA_URL }}{{sales.image}}" alt="...">
-      <div class="caption">
+      <div class="caption" style="color:black">
         <h3>{{sales.name}}</h3>
         <p>{{sales.description}}</p>
-        <p> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        <p> <a href="#" class="btn btn-default" role="button">Detalhes da oferta</a></p>
       </div>
     </div>
   </div>
