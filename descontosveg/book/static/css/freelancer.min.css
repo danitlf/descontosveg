@@ -479,6 +479,21 @@ footer .footer-below {
 }
 }
 
+
+
+
+@media (max-width: 768px){
+.img-responsive{
+    width: 40%;
+    height: auto;
+    padding-top: 11px;
+    padding-left: 10px;
+}
+}
+
+
+
+
 /*
 #livros{
 
