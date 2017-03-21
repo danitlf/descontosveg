@@ -26,48 +26,14 @@
 
                 
 
-                <div class="row">
-  <div class="col-sm-4 portfolio-item">
+               
 
-     {% for compras in compras %}
-
-                 {% if compras != '' %}
-                   
-    <div class="thumbnail">
-
-       
-        <img src="{{ MEDIA_URL }}{{compras.sale.image}}" > 
-      
-      <div class="caption" style="color:black">
-        <h3>{{compras.sale.name}}</h3>
-        {% if compras.state == '1' %}
-        <p> Disponível</p>
-        {% else %}
-        <p> Utilizado</p>
-        {%  endif %}
-        
-        <p> Valor: R$ {{compras.sale.value}}</p>
-        <p> Número do pedido:{{compras.id_user_sale}}</p>
-        
-      </div>
-    </div>
-  </div>
-
-   {% else %}  
-
-<h1> Não existem pedidos ativos em seu nome </h1>
-
-
-</div>
               
              
 
 
 
-                {% endif %}
-
-				
-                {% endfor %}
+               
 
 
                 
@@ -79,6 +45,44 @@
 </div> 
 </div> 
 <!-- --> 
+
+
+<div class="container"> 
+<div class="row">
+  {% for compras in compras %}
+  {% if compras != '' %} 
+
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{ MEDIA_URL }}{{compras.sale.image}}" alt="...">
+      <div class="caption" style="color:black" >
+        <h3>{{compras.sale.name}}</h3>
+        {% if compras.state == '1' %}
+        <p><strong> Status: </strong> Disponível</p>
+        {% else %}
+        <p> <strong>Status: </strong> Utilizado</p>
+        {%  endif %}
+        
+        <p>  <strong>Valor: </strong> R$ {{compras.sale.value}}</p>
+        <p> <strong> Número do pedido: </strong>{{compras.id_user_sale}}</p>
+      </div>
+    </div>
+  </div>
+
+  {% else %}
+
+   <div class="caption" style="color:black" >
+  <h3> Não existem pedidos ativos em seu nome     </h3>
+   </div>
+
+{% endif %}
+{% endfor %}
+
+
+
+</div>
+</div> 
 
 
 
