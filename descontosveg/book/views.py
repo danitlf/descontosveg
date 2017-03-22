@@ -67,8 +67,9 @@ def cadastro(request):
 def send_email(request):
     subject = request.POST.get('contact_name')
     message = request.POST.get('content')
+    telefone = request.POST.get('telefone')
     from_email = request.POST.get('contact_email')
-    message = message + "\n from: "+ str(from_email)
+    message = message + "\n from: "+ str(from_email) + "\n tefone: "+ str(telefone)
     if subject and message and from_email:
         try:
             send_mail(subject, message, from_email, ['descontosveg@gmail.com'])
