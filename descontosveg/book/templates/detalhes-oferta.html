@@ -10,6 +10,9 @@
 
 
 <div class= "container"> 
+ 	
+ 	<em class="regras"> <a class="regras" href="{% url 'ofertas' title.books.id %}"> < Voltar para ofertas </a>   </em> 
+
 	{% for sales in sales %}
 
 <div class="content-section-a">
@@ -50,6 +53,9 @@
 </div>
 </div>
 {% endfor %}
+
+ 
+
 </div> 
 
 
