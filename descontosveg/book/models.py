@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 
 
 STATUS_CHOICES = (
@@ -62,6 +63,7 @@ class Partner(models.Model):
 
     def __unicode__(self):
         return (self.name) 
+
 
 
 

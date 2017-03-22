@@ -82,18 +82,13 @@ def send_email(request):
 def email_enviado(request):
     return render(request, 'mensagem_enviada.html')
 
-@login_required(login_url='/login/')
 
+@login_required(login_url='/login/')
 def pedidos(request):
 
-
-
-    
     usuario = request.user
     compras = User_Sales.objects.filter(user=usuario)
     
-    
-
     return render(request, 'meus-pedidos.html', {'compras':compras, 'STATIC_URL': settings.STATIC_URL})        
 
 
@@ -119,9 +114,6 @@ def contato(request):
 
     
     form_class = ContactForm
-
-
-
     return render(request, 'contato.html', {'form': form_class,'STATIC_URL': settings.STATIC_URL})
 
 
