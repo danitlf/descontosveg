@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
-from django.contrib.auth.models import AbstractUser
+
 
 
 STATUS_CHOICES = (
@@ -36,7 +36,10 @@ class Book(Usual):
 class Sale(Usual):
 
     partner = models.ForeignKey('Partner')
+    validity = models.CharField(_('Validade'),max_length=100,null=True, blank=True)
+    rules = models.TextField(_('Regras de uso'),max_length=100,blank=True)
     books = models.ForeignKey('Book',verbose_name=_('Livro'))
+
 
 
     class Meta:
@@ -51,6 +54,7 @@ class Partner(models.Model):
 
     name = models.CharField(_('Nome'),max_length=110,null=True, blank=True) 
     email = models.CharField(_('Email'),max_length=100,null=True, blank=True)
+    site = models.CharField(_('Site'),max_length=100,null=True, blank=True)
     address = models.CharField(_('Endereco'),max_length=100,null=True, blank=True)
     phone = models.CharField(_('Telefone'),max_length=100,null=True, blank=True)     
     user = models.ForeignKey(User, null=True, blank=True)

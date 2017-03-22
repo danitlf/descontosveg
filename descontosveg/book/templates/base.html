@@ -78,7 +78,9 @@
                     <li class="page-scroll">
                         <a class="menu_link" href="{% url 'sobre' %}">Sobre </a>
                     </li>
-                    
+                    <li class="page-scroll">
+                        <a class="menu_link" href="{% url 'como_funciona' %}">Como Funciona </a>
+                    </li>
                     <li class="page-scroll">
                         <a class="menu_link" href="{% url 'contato' %}">Contato</a>
                     </li>
@@ -145,6 +147,7 @@
                         
                         <p><a href="{% url 'sobre' %}"> Sobre</a></p>
                         <p><a href=""> Parceiros</a></p>
+                        <p><a href="{% url 'como_funciona' %}"> Como Funciona</a></p>
                         <p><a href=""> Dúvidas</a></p>
                         <p><a href="{% url 'contato' %}"> Contatos</a></p>
                     </div>
@@ -203,6 +206,8 @@
     <script src="{% static 'js/freelancer.min.js'%}"></script>
 
 </body>
+
+
 
 </html>
 

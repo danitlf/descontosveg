@@ -16,6 +16,9 @@ from django.contrib import messages
 
 
 
+def como_funciona(request):
+    return render(request, 'como_funciona.html')
+
 def custom404(request):
     return render(request, '404.html', status=404)
 
@@ -64,8 +67,9 @@ def cadastro(request):
 def send_email(request):
     subject = request.POST.get('contact_name')
     message = request.POST.get('content')
+    telefone = request.POST.get('telefone')
     from_email = request.POST.get('contact_email')
-    message = message + "\n from: "+ str(from_email)
+    message = message + "\n from: "+ str(from_email) + "\n tefone: "+ str(telefone)
     if subject and message and from_email:
         try:
             send_mail(subject, message, from_email, ['descontosveg@gmail.com'])
@@ -129,6 +133,13 @@ def ofertas(request,id):
      sales = Sale.objects.filter(books_id=book)
      context = { 'sales': sales, 'title':sales[0] }
      return render(request, 'ofertas.html', context)
+
+
+
+def detalhes(request,id):
+     sales = Sale.objects.filter(id=id)
+     context = { 'sales': sales, 'title':sales[0] }
+     return render(request, 'detalhes-oferta.html', context)
 
 
 

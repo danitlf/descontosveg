@@ -1,0 +1,116 @@
+
+
+{% extends 'base.html' %} {% block content %}
+
+
+<div style="height:120px"> </div>
+
+
+   
+
+
+<div class= "container"> 
+ 	
+ 	<em class="regras"> <a class="regras" href="{% url 'ofertas' title.books.id %}"> < Voltar para ofertas </a>   </em> 
+
+	{% for sales in sales %}
+
+<div class="content-section-a">
+
+<div class="row">
+<div class="col-lg-5 col-sm-6">
+<hr class="section-heading-spacer">
+<div class="clearfix"></div>
+<h2 class="section-heading">
+{{sales.name}}
+<br>
+
+</h2>
+
+
+    <div class="thumbnail neil">
+      <div class="caption" style="color:black">
+        <h3>Descrição: </h3>
+        <p>{{sales.description}} </p>
+        
+      </div>
+    </div>
+    
+    <div class="thumbnail neil">
+      <div class="caption" style="color:black">
+        <h3>Onde usar: </h3>
+        <p>{{sales.partner.name}} </p>
+        
+      </div>
+    </div>
+    
+    <div class="thumbnail neil">
+
+      <div class="caption" style="color:black">
+
+
+        <h3> <i class="fa fa-map-marker fa-5x"></i>  Endereço: </h3>
+        <p>{{sales.partner.address}} </p>
+        
+      </div>
+    </div>
+
+    
+    <div class="thumbnail neil">
+      <div class="caption" style="color:black">
+        <h3>Contatos:  </h3>
+        <p>{{sales.partner.phone}} </p>
+        <p>{{sales.partner.site}} </p>
+        
+      </div>
+    </div>
+
+    
+    <div class="thumbnail neil">
+      <div class="caption" style="color:black">
+        <h3>Regras de uso:  </h3>
+        <p>{{sales.rules}} </p>
+       
+        
+      </div>
+    </div>
+
+    
+    <div class="thumbnail neil">
+      <div class="caption detal" style="color:black">
+
+        <h3>Validade:  </h3>
+        <p>{{sales.validity}} </p>
+       
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+<div class="col-lg-5 col-lg-offset-2 col-sm-6">
+<img class="img-responsive" alt="" src="{{ MEDIA_URL }}{{sales.image}}">
+</div>
+</div>
+</div>
+{% endfor %}
+
+
+
+
+ 
+
+</div> 
+
+
+
+
+
+<div style="height:20px"> </div>
+
+
+
+{% endblock content %}

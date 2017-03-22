@@ -492,7 +492,38 @@ footer .footer-below {
 }
 
 
+.section-heading{
 
+color: #0c8059 ;
+
+}
+
+.regras{
+
+color: #0c8059 ;
+
+}
+
+.neil{
+    background: whitesmoke none repeat scroll 0 0;
+    border-color: #ededed;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px 1px 3px;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+h3{
+
+font-family: "PT Sans Caption",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+
+
+}
 
 /*
 #livros{

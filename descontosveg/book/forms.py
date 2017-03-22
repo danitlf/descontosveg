@@ -6,8 +6,11 @@ from django.utils.translation import ugettext_lazy as _
 class ContactForm(forms.Form):
     contact_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Nome', 'id':'name', 'data-validation-required-message':'Escreva um nome.'}))
     contact_email = forms.EmailField(required=True, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'E-mail', 'id':'email', 'data-validation-required-message':'Digite um e-mail.'}))
+    telefone = forms.CharField(
+        required=False, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Telefone', 'id':'telefone'})
+    )
     content = forms.CharField(
-        required=True, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Digite sua mensagem', 'id':'content', 'data-validation-required-message':'Please enter a content.'})
+        required=True, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Digite sua mensagem', 'id':'content', 'data-validation-required-message':'Por favor coloque uma mensagem.'})
     )
 
 
