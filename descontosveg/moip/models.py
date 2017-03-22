@@ -39,13 +39,23 @@ class Purchase(models.Model):
     id_moip =  models.CharField(_('id_moip'),max_length=200, null=True, blank=True)
     date = models.DateField(null=True, blank=True)
 
+    class Meta:
+        verbose_name = _('Compra')
+        verbose_name_plural = _('Compra')    
+
+
+
     def __unicode__(self):
         return (str(self.pk))
     
 class User_Sales(models.Model):
     sale = models.ForeignKey('book.Sale')
-    state = models.CharField(_('status'),max_length=1, choices=STATUS_CHOICES2)
     user = models.CharField(_('CPF'), null=True, blank=True,max_length=11)
     purchase = models.ForeignKey('Purchase')
     id_user_sale = models.CharField(_('ID_OFERTA_USUARIO'), null=True, blank=True, max_length=500)
+    state = models.CharField(_('status'),max_length=1, choices=STATUS_CHOICES2)
 
+
+    class Meta:
+        verbose_name = _('Ofertas por Usuario')
+        verbose_name_plural = _('Ofertas por Usuario')
