@@ -5,6 +5,7 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
+
 PROJECT_DIR = Path(__file__).parent
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -167,13 +168,13 @@ STATIC_ROOT = PROJECT_DIR.child('staticfiles',)
 
 AWS_QUERYSTRING_AUTH = False
 
-AWS_ACCESS_KEY_ID = os.environ['AKIAIN663JY4VBCHWZBA ']
+AWS_ACCESS_KEY_ID = 'AKIAIN663JY4VBCHWZBA'
 
-AWS_SECRET_ACCESS_KEY = os.environ['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']
+AWS_SECRET_ACCESS_KEY = 'RTJB2mvWAZYzVnTocAWaGL0k2/sEBjHlDFbm7Mmq'
 
-AWS_STORAGE_BUCKET_NAME = os.environ['descontosveg']
+AWS_STORAGE_BUCKET_NAME = 'descontosveg'
 
-MEDIA_URL = 'http://%s.s3.amazonaws.com/upload/' % AWS_STORAGE_BUCKET_NAME
+MEDIA_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto.S3BotoStorage"
 
