@@ -6,6 +6,8 @@ import cloudinary.uploader
 import cloudinary.api
 
 
+
+
 PROJECT_DIR = Path(__file__).parent
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -164,7 +166,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = PROJECT_DIR.child('staticfiles',)
 
 
-
+AWS_S3_HOST ="s3-sa-east-1.amazonaws.com"
 
 AWS_QUERYSTRING_AUTH = False
 
