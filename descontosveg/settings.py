@@ -163,16 +163,21 @@ STATIC_URL = '/static/'
 STATIC_ROOT = PROJECT_DIR.child('staticfiles',)
 
 
-MEDIA_ROOT = PROJECT_DIR.child('media')
-
-MEDIA_URL = '/media/'
 
 
-cloudinary.config( 
-  cloud_name = "hu5jsgcmn", 
-  api_key = "389482874992918", 
-  api_secret = "GYI00jdG7ps4PWBLfaRwzmjFa4U" 
-)
+AWS_QUERYSTRING_AUTH = False
+
+AWS_ACCESS_KEY_ID = os.environ['AKIAIN663JY4VBCHWZBA ']
+
+AWS_SECRET_ACCESS_KEY = os.environ['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']
+
+AWS_STORAGE_BUCKET_NAME = os.environ['descontosveg']
+
+MEDIA_URL = 'http://%s.s3.amazonaws.com/upload/' % AWS_STORAGE_BUCKET_NAME
+
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto.S3BotoStorage"
+
+
 
 # AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
 #     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
