@@ -15,7 +15,7 @@ a, a:hover, a:focus, a:active, a.active {
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 500;
+    font-weight: 700;
 }
 hr.star-light, hr.star-primary {
     -moz-border-bottom-colors: none;

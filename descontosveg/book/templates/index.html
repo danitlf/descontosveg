@@ -22,12 +22,14 @@
 <div class="row">
 <div class="col-lg-12">
 <div class="intro-message">
+
 <h1>Ofertas imperdíveis e saudáveis</h1>
 
 
 
 
 <div class="page-scroll">
+<br> 
 <a class="btn btn-default btn-lg" href="#portfolio">
 
 <span class="network-name">Conheça nossas ofertas</span>
@@ -74,39 +76,32 @@
 
 <div class="container"> 
 <div class="row">
+
+
+
+
+
+
   {% for books in book %}
   {% if books.status == "p" %} 
 
 
-  <div class="col-sm-6 col-md-4" style="margin-left:30px;">
-
-  
-    <div class="thumbnail" style="background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.5)),
-    url({{ MEDIA_URL }}{{books.image}})no-repeat;width:90%;height:110%; ">
-
-    
-       
-     
-      <div class="caption" style="color:white">
+<div class="col-sm-6 col-md-4">
+    <div class="thumbnail neil">
+      <img src="{{ MEDIA_URL }}{{books.image}}" alt="...">
+      <div class="caption" style="color:black" align="center">
         <h3>{{books.name}}</h3>
         <p>{{books.description}}</p>
-         <p> Valor R$:{{books.value}}</p>
-    
-    
+        <p> <a href="{% url 'ofertas' books.id %}" class="btn btn-default" role="button">Ver todas as ofertas</a></p>
+      </div>
     </div>
-
-
-
-    </div>
-
-
-<div id="livros">
-        <p><a href="{% url 'ofertas' books.id %}" class="btn btn-primary" role="button">Veja todas as ofertas</a> </p>
-        </div>
-        
-    
   </div>
 
+
+
+
+
+  
 
 
 
