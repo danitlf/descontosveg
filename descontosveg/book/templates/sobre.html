@@ -1,29 +1,101 @@
- {% extends 'base.html' %} {% block content %} {% load static from staticfiles %}
 
-<link href="{% static 'css/sobre.css' %}" rel="stylesheet">
+<!-- herda da base e inícia seu bloco de conteúdo --> 
 
-<div id="img_header">
-        <img id="img_central" src="{% static '/img/sobre.jpg' %}">
+{% extends 'base.html' %}
+{% block content %}
 
-</div>
 
+
+ 
+
+ 
+
+    
+    <header>
+
+
+
+       
+            <div class="row">
+                <div class="intro-header" id="introd">
 <div class="container">
-        <div class="row">
-                <div class="col-lg-12 text-center">
-                        <h2>Veg Descontos - O que é ?  <br><br>
-                                <p>
-                                       O “Veg Descontos” é o primeiro clube de descontos para vegetarianos, veganos e admiradores de comida e hábitos saudáveis do Brasil.<br><br>
+<div class="row">
+<div class="col-lg-12">
+<div class="intro-message">
 
-Nasceu de um sonho de querer ajudar as pessoas a terem uma vida mais saudável e contribuir com um mundo mais sustentável.<br><br>
+<h1>Ofertas imperdíveis e saudáveis</h1>
 
-Somos uma empresa inovadora e conectamos vegetarianos, veganos e simpatizantes à parceiros que fornecem produtos e serviços deste mercado, oferecendo qualidade, comodidade e descontos.<br><br>
 
-Nossa missão é encantar os nossos clientes e parceiros fazendo a vida mais saudável, prática, divertida e principalmente mais econômica.<br><br>
-                                </p>
-                        </h2>
 
-                </div>
-        </div>
+
+<div class="page-scroll">
+<br> 
+<a class="btn btn-default btn-lg" href="#portfolio">
+
+<span class="network-name">Conheça nossas ofertas</span>
+</a>
 </div>
 
+</div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        
+    </header>
+
+
+
+
+    <section id="portfolio">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 text-center">
+
+
+     
+                    <h3 class="section-subheading text-muted">Veja todos os nossos E-books de ofertas  </h3>
+</div>
+
+
+
+
+</div> 
+
+</div>
+
+
+</section>
+
+
+
+   
+
+
+
+<div class="container"> 
+<div class="row">
+
+
+
+
+
+
+  
+
+
+
+</div>
+</div> 
+   
+
+
+
+
+    
+</header> 
+
+  
+    
 {% endblock content %}

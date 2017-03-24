@@ -53,11 +53,11 @@ class PartnerAdmin(admin.ModelAdmin):
 
 
     
-    list_display = ('name','user','email','address','phone')
+    list_display = ('name','user','email','site','address','phone')
     list_editable = ()
     list_editable = ()
-    search_fields = ('name','user','email','address','phone')
-    fields = ('name','user','email','address','phone')
+    search_fields = ('name','user','email','site','address','phone')
+    fields = ('name','user','email','site', 'address','phone')
 
     
     
