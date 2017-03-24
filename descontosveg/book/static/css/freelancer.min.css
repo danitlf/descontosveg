@@ -531,6 +531,23 @@ color: #0c8059 ;
 
 }
 
+
+.intro-header2 {
+    background-attachment: scroll, fixed;
+    background-clip: border-box, border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("../img/frutas.jpg");
+    background-origin: padding-box, padding-box;
+    background-position: 0 0%, center center;
+    background-repeat: repeat, no-repeat;
+    background-size: cover;
+    color: #f8f8f8;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    text-align: center;
+    width: 100%;
+}
+
 /*
 #livros{
 
