@@ -14,7 +14,7 @@ STATUS_CHOICES = (
 class Usual(models.Model):
     
     name = models.CharField(_('titulo'),max_length=100)
-    description = models.TextField(_('descricao'),max_length=100,blank=True)
+    description = models.TextField(_('descricao'),max_length=1000,blank=True)
     value = models.DecimalField(null=True, blank=True, default=None,decimal_places=2,max_digits=5)
     status = models.CharField(max_length=1, choices=STATUS_CHOICES)
     image = models.ImageField(_('Imagem:'),null=True, blank=True, upload_to= 'uploads')
@@ -39,7 +39,7 @@ class Sale(Usual):
     image2 = models.ImageField(_('Imagem 2:'),null=True, blank=True, upload_to= 'uploads')
     image3 = models.ImageField(_('Imagem 3:'),null=True, blank=True, upload_to= 'uploads')
     validity = models.CharField(_('Validade'),max_length=100,null=True, blank=True)
-    rules = models.TextField(_('Regras de uso'),max_length=100,blank=True)
+    rules = models.TextField(_('Regras de uso'),max_length=1000,blank=True)
     partner = models.ForeignKey('Partner')
     books = models.ForeignKey('Book',verbose_name=_('Livro'))
 
@@ -56,7 +56,7 @@ class Sale(Usual):
 class Partner(models.Model):
 
     name = models.CharField(_('Nome'),max_length=110,null=True, blank=True) 
-    address = models.CharField(_('Endereco'),max_length=100,null=True, blank=True)
+    address = models.CharField(_('Endereco'),max_length=300,null=True, blank=True)
     phone = models.CharField(_('Telefone'),max_length=100,null=True, blank=True)     
     email = models.CharField(_('Email'),max_length=100,null=True, blank=True)
     site = models.CharField(_('Site'),max_length=100,null=True, blank=True)
