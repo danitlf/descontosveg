@@ -551,13 +551,13 @@ color: #0c8059 ;
 
 .cut{
 
-    white-space:nowrap; 
-    width: 19em; 
-    height: auto;
-    overflow: hidden;
-    text-overflow: ellipsis; 
-    white-space: 19em; 
-   
+    height: 1000%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 170%;
+    
+
 
 
 }
