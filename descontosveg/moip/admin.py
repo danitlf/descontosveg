@@ -25,11 +25,11 @@ class User_SalesAdmin(admin.ModelAdmin):
 			
 			return qs 
     
-    list_display = ('sale','user','id_user_sale','state',)
+    list_display = ('user','id_user_sale','state',)
     list_editable = ('state', )
-    search_fields = ('sale','user','id_user_sale','state', )
+    search_fields = ('user','id_user_sale','state', )
     readonly_fields = ('sale','user','id_user_sale',)
-    list_filter = ('sale','user','id_user_sale')
+    list_filter = ('user','id_user_sale')
 
      
 admin.site.register(User_Sales, User_SalesAdmin)

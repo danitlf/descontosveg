@@ -78,7 +78,7 @@ def atualiza_compra(dados):
 
 
 def insere_ofertas_do_usuario(compra):
-    sales_do_book = Sale.objects.filter(books=compra.book)
+    sales_do_book = Sale.objects.filter(books=compra.book).filter(status='p')
     for sale in sales_do_book:
 
         #gera o id da oferta daquele usuario
