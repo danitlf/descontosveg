@@ -9,6 +9,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 import json
+from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
@@ -24,17 +25,27 @@ def moipSend(request, id_book):
     value = str(book_selecionado.value)
     razao = str(book_selecionado.name)
 
+    url_moip = "https://desenvolvedor.moip.com.br/sandbox/Instrucao.do?token="
     #creating obj of Purchase
     purchase = Purchase(state="0", value=book_selecionado.value, book=book_selecionado, user=request.user)
     purchase.save()
 
 
     moip = MoIP(razao=razao,valor=value)
-    moip.set_credenciais(token="IZXOTSU5G1ZXWZQRO4ZCDOOXGDWPBRTE",key="3T366IZHB8F7YZ22PMCJW5UXZNCDAXU7JVYH8IZY") 
+    #credenciais de dev
+    #moip.set_credenciais(token="IZXOTSU5G1ZXWZQRO4ZCDOOXGDWPBRTE",key="3T366IZHB8F7YZ22PMCJW5UXZNCDAXU7JVYH8IZY") 
+    #credenciais de prod
+    if settings.MOIP_PROD:
+        moip.set_credenciais(token="DWGPNCYU8W3W6QRFFVO0RWBUAZNMQU7A",key="RWGTYI6JHVAQ9BHQFL7LGDUIMPCP2VZFALN858AH")
+        #so habilitar o ambiente em prod
+        moip.set_ambiente('producao')
+        url_moip = "https://www.moip.com.br/Instrucao.do?token="
+
     moip.set_id_proprio(str(purchase.id))
     moip.envia()
     resposta = moip.get_resposta()
-    return HttpResponseRedirect("https://desenvolvedor.moip.com.br/sandbox/Instrucao.do?token="+str(resposta['token']))
+    
+    return HttpResponseRedirect(url_moip+str(resposta['token']))
 
 
 def formMoip(request):

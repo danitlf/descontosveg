@@ -150,3 +150,4 @@ MEDIA_ROOT = PROJECT_DIR.child('media')
 
 MEDIA_URL = '/media/'
 
+MOIP_PROD = False
