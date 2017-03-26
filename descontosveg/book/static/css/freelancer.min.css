@@ -548,6 +548,19 @@ color: #0c8059 ;
     width: 100%;
 }
 
+
+.cut{
+
+    white-space:nowrap; 
+    width: 19em; 
+    height: auto;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: 19em; 
+   
+
+
+}
 /*
 #livros{
 
