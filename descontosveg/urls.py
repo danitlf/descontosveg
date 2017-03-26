@@ -23,6 +23,7 @@ from django.contrib import admin
 from descontosveg.book import views
 from descontosveg.moip import views as view_moip
 from django.contrib.auth import views as auth_views
+from django.conf.urls import handler404, handler500
 
 
 urlpatterns = [
@@ -51,6 +52,9 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += staticfiles_urlpatterns()
+
+handler404 = views.custom404
+handler500 = views.custom404
 
 
 admin.site.site_header = settings.ADMIN_SITE_HEADER
