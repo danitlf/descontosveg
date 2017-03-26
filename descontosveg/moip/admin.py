@@ -27,7 +27,7 @@ class User_SalesAdmin(admin.ModelAdmin):
     
     list_display = ('user','id_user_sale','state',)
     list_editable = ('state', )
-    search_fields = ('user','id_user_sale','state', )
+    search_fields = ('user','id_user_sale','state','purchase__value', )
     readonly_fields = ('purchase','sale','user','id_user_sale',)
     list_filter = ('user','id_user_sale')
 
@@ -37,5 +37,13 @@ admin.site.register(User_Sales, User_SalesAdmin)
 # Register your models here.
 
 #admin.site.register(User_Sales)
-admin.site.register(Purchase)
+
+class PurchaseAdmin(admin.ModelAdmin):
+
+
+	list_display = ('book','tipo_pagamento','forma_pagamento','state','value','token','id_moip','date',)
+	
+admin.site.register(Purchase, PurchaseAdmin)
+
+
 

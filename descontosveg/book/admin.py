@@ -40,7 +40,7 @@ class SaleAdmin(admin.ModelAdmin):
     list_display = ('name','description','status',)
     list_editable = ()
     list_editable = ()
-    search_fields = ()
+    search_fields = ('name',)
     fields = ()
     
     
