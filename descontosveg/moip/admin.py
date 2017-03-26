@@ -28,7 +28,7 @@ class User_SalesAdmin(admin.ModelAdmin):
     list_display = ('user','id_user_sale','state',)
     list_editable = ('state', )
     search_fields = ('user','id_user_sale','state', )
-    readonly_fields = ('sale','user','id_user_sale',)
+    readonly_fields = ('purchase','sale','user','id_user_sale',)
     list_filter = ('user','id_user_sale')
 
      
