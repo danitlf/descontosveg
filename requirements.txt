@@ -14,7 +14,7 @@ lxml==3.7.3
 olefile==0.44
 orderedmultidict==0.7.11
 packaging==16.8
-Pillow==4.0.0
+Pillow==9.0.1
 psycopg2==2.6.2
 pyparsing==2.1.10
 six==1.10.0
